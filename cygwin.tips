@@ -1,0 +1,38 @@
+sshd
+  # ssh-host-config -y
+    # chmod +r /etc/passwd /etc/group
+    # chmod o+x /var
+  # cygrunsrv -S sshd  ..... start daemon
+  # cygrunsrv -E sshd  ..... stop daemon
+  # cygrunsrv -Q sshd  ..... print daemon status
+  # cygrunsrv -R sshd  ..... uninstall !
+  
+check file and package
+	$ cygcheck -f /usr/bin/ld
+	$ cygcheck -p bin/ls
+
+getopt
+	$ cygcheck -f /usr/bin/getopt
+	util-linux-2.21.2-1
+
+change home directory
+
+       Change cygwin home directory to c:\Users\hmizuno
+       
+              mkpasswd -c -p "$(cygpath -H)" > /etc/passwd
+
+cygpath
+	Convert Unix and Windows format paths,
+	or output system path information
+
+	$ cygpath -d /cygdrive/c/Users
+	C:\Users
+
+	$ cygpath -H
+	/cygdrive/c/Users
+
+	$ cygpath -Hd
+	C:\Users
+
+
+

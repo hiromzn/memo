@@ -1,0 +1,55 @@
+URL: https://github.com/
+
+https://seleck.cc/630
+https://seleck.cc/635
+
+Git
+	ソフトウェアのバージョン管理システム
+
+GitHub
+	管理ツールGitに、よりチーム開発に適した機能を付け加えたサービス
+
+	プロジェクトのバグ管理に使えるIssuesや、
+	コードレビューを効率化するPull Requestなどの
+	チーム開発に役立つ機能が、Web上から使える
+
+リポジトリ作成
+	[New Repository]から、リポジトリ名を入力
+	Initialize this repository with a READMEにチェック
+
+クローン/clone：
+	リポジトリの内容をローカルPCにコピーする
+	$ git clone https://github.com/hiromzn/<repo>
+
+コミット/commit：
+	ファイルを更新した情報を、Gitに記憶させる
+	$ git add -A
+	$ git commit -m "message text"
+
+プッシュ/push：
+	ローカルで変更した内容を、元のリポジトリに反映する
+	$ git push
+
+
+Gitのブランチ(branch)機能
+	ブランチは、簡単にいうと作業ディレクトリの複製
+	複製するだけでなく、最終的に複製前のブランチに変更点を統合できます(これをマージと言います)。
+
+	creta branch
+	    $ git branch branch-name
+	list branch
+	    $ git branch
+
+	作業するbranchの切り替え
+	    $ git checkout <branch>
+
+Pull Request
+	Pull Requestは、「編集リクエスト」のような機能
+	(こういう修正をしてみたけど、もし良ければ反映して下さい、というもの)
+		自分が担当する実装用の、branchを作成する
+		変更点をコミット
+		そのbranchを元にPull Requestを作成する
+		レビュアーはPull Reqeustを確認し、問題なければ元のブランチに反映(マージ)する
+	git push -u origin test-branch
+	    ローカルbranchを、皆が見れる場所(GitHub上のリモートリポジトリ)にプッシュする。
+

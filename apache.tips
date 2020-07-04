@@ -1,0 +1,249 @@
+systemctl
+  /etc/sysconfig/httpd
+	OPTIONS=.....
+	LANG=C
+
+  /usr/lib/systemd/system/httpd.service
+	[Service]
+	EnvironmentFile=/etc/sysconfig/httpd
+	ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+	EecReload=.....
+Using environment variables in systemd units
+      https://coreos.com/os/docs/latest/using-environment-variables-in-systemd-units.html
+
+  Environment:
+	SPACEで区切られたリストを指定できる。
+	複数回（行）指定できる。
+	同じ環境変数を指定すると後の指定で上書きされる。
+	このオプションにNULLが指定されると、前に定義されたものは全部無効になる。
+	
+	[Service]
+	# Client Env Vars
+	Environment=ETCD_CA_FILE=/path/to/CA.pem
+	Environment=ETCD_CERT_FILE=/path/to/server.crt
+	Environment=ETCD_KEY_FILE=/path/to/server.key
+
+	■スクリプトを実行することはできない！
+	　■　間違え(動作しない）：　Environment=/usr/bin/curl http://example.com/something
+	
+  EnvironmentFile:
+	テキストファイルから環境変数を読み込む。
+	ファイル内を、改行で区切ることで、複数の環境変数を定義可能
+
+	
+	
+	
+
+systemdでユーザーの環境変数を読み込むようにする
+  /etc/sysconfig/USER_NAME　に読み込ませたい環境変数を書く
+	以下の要領でserviceを動かすユーザーが読み込む環境変数を
+	定義するファイルを設定します。
+
+		# cat <_EOF_ > /etc/sysconfig/test
+		LANG=ja_JP.UTF-8
+		PATH=/home/test/.plenv/shims:/h.....
+		HOGE=HOGE
+		PIYO=PIYO
+		_EOF_
+
+  systemd設定ファイルの[service]ディレクティブにEnvironmentFileを定義する
+	上記で作成した環境変数を定義したファイルを読み込ませるために、
+	systemd設定ファイルの[service]ディレクティブにEnvironmentFileの行を追加
+
+		
+
+ssl / https設定方法
+  - sslモジュールの入ったapacheをダウンロードしてインストールする
+  - httpd.confの以下の行をコメントアウト
+     #LoadModule SSL_module modules/mod_ssl.so
+
+  - 以下の操作でキーを作成する。
+    $ cd ~/bin/
+
+    秘密キーの作成
+    $ openssl genrsa -des3 1024 > server.key
+
+    公開鍵の作成
+    $ openssl req -new -key server.key > server.csr
+      CSRファイル
+        公開鍵の情報の他に、作成時に指定する組織名や組織の所在地などの
+ 	情報を含むデータのこと。認証局からデジタル証明書を発行してもらう
+   	ときに必要になる。
+
+    デジタル証明書の作成     
+    $ openssl x509 -in server.csr ?days 365 -req -signkey server.key > server.crt
+
+    秘密鍵のパスフレーズの解除
+    $ cp server.key server.key_bk
+    $ openssl rsa -in server.key_bk > server.key
+
+  - httpd.comの修正
+    以下の行をコメントアウト
+
+    #Include conf/extra/httpd-ssl.conf
+
+  - conf/extra/httpd-ssl.confの内容確認
+
+    <VirtualHost _default_:443>
+    SSLCertificateFile "C:/opt/apache/apache2.2/conf/server.crt"
+    SSLCertificateKeyFile "C:/opt/apache/apache2.2/conf/server.key"
+
+    ※ keyファイルのコピー
+      $ cp server.crt ~/conf
+      $ cp server.key ~/conf
+
+documents
+  「Apacheの性能特性とチューニング」
+
+      技術文書(旧版)
+      http://h50146.www5.hp.com/products/software/oe/linux/mainstream/support/doc/index_obsolete.html?jumpid=reg_R1002_JPJA
+
+info, status
+  mod_infoと、mod_statusをloadする。
+
+    LoadModule status_module modules/mod_status.so
+    LoadModule info_module modules/mod_info.so
+
+    ExtendedStatus On
+
+    <Location /server-status>
+      SetHandler server-status
+      Order deny, allow
+      Deny from all
+      Allow from all # <<< permission
+    </Location>
+
+    <Location /server-info>
+      SetHandler server-info
+      Order deny, allow
+      Deny from all
+      Allow from all # <<< permission
+    </Location>
+
+  使用方法
+    https://hostname:port/server-info
+    https://hostname:port/server-status
+    https://hostname:port/server-status?refresh
+    https://hostname:port/server-status?refresh=<interval(sec)>
+
+version
+  $ apachectl -version
+  Server version: Apache/2.0.49  HP-UX_Apache-based_Web_Server
+  Server built:   Apr  7 2004 11:09:29
+
+module
+  モジュールを別にコンパイルして、いつでも
+  LoadModule ディレクティブを使って追加できます。
+
+  そうでない場合は、モジュールの追加や削除をする
+  ためには Apache を再コンパイルする必要があります。
+
+  設定ディレクティブは <IfModule> ブロックに入れる
+  ことで特定のモジュールが存在するときだけ
+  設定ファイルに含まれるようにすることができます。
+
+  コンパイルされているモジュールの確認
+    $ apachectl -l
+    Compiled in modules:
+      core.c
+      worker.c
+      http_core.c
+      mod_so.c
+
+config
+  syntax check
+    $ apachectl -t -f conf1/httpd_my.conf
+
+<IfModule>
+  <IfModule name> ..... nameが組み込まれていたときに設定される。
+  <IfModule !name> .... nameが組み込まれていないときに設定される。
+
+  name .... moduleのファイル名(mod_rewrite.cなど)
+
+MPM worker
+  status : MPM
+  moduleID : mpm_worker_module
+  source   : worker.c
+
+  1つの子プロセスには、ThreadsPerChildの数だけのthreadと、
+  requestをlistenするthreadを1つ作成する。
+
+  StartServers
+    起動初期時のプロセス総数
+
+  MinSpareThreads
+    workerの場合のdefaultは、250
+    idle threadの数が足りない場合は、子プロセスを
+    起動する。
+
+  MaxSpareThreads
+    workerの場合のdefaultは、500
+    idle threadの数が多すぎる場合は、子プロセスの
+    数を少なくする。
+
+    予備(Spare)のスレッドを上記範囲で持つように
+    子プロセスを起動停止して制御する。
+
+  MaxClients/ThreadsPerChild
+    活動中の子プロセスの数の最大値
+
+  MaxClients
+    同時に応答することの出来るクライアントの最大数
+    workerの場合のdefaultは、ThreadsPerChildの16倍
+
+  ServerLimit
+    活動中の子プロセスの上限
+    ServerLimit > MaxClients/ThreadsPerChildである必要がある。
+
+  ThreadLimit
+    スレッドの上限(workerの時のdefaultは64)
+    ThreadLimit > ThreadsPerChildである必要がある。
+
+  MaxRequestsPerChild
+    個々の子サーバプロセスが扱うことの出来るリクエ
+    ストの制限を設定。設定した値の数のrequestを処
+    理した後に子プロセスは終了する。
+
+  ThreadsPerChild
+    子プロセスで生成されるthread数
+
+  典型的な設定
+    ServerLimit 16
+    StartServers 2
+    MaxClients 150
+    MinSpareThreads 25
+    MaxSpareThreads 75
+    ThreadsPerChild 25 
+
+  IPA JBoss tuning
+    StartServers    300
+    ServerLimit	    300
+    MinSpareThreads 300
+    MaxSpareThreads 300
+    MaxClients	    300
+    MaxRequestsPerChild 0
+
+# worker MPM
+# StartServers: initial number of server processes to start
+# MaxClients: maximum number of simultaneous client connections
+# MinSpareThreads: minimum number of worker threads which are kept spare
+# MaxSpareThreads: maximum number of worker threads which are kept spare
+# ThreadsPerChild: constant number of worker threads in each server process
+# MaxRequestsPerChild: maximum number of requests a server process serves
+
+<IfModule worker.c>
+StartServers         2
+MaxClients         150
+MinSpareThreads     25
+MaxSpareThreads     75
+ThreadsPerChild     25
+MaxRequestsPerChild  0
+
+#
+# To reduce memory usage in the worker MPM, the thread guard page
+# can be disabled, at the expense of some protection against stack
+# overflow.
+#
+#ThreadGuardArea off
+
+</IfModule>
