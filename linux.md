@@ -690,15 +690,37 @@ start services...
 
 # yum
 
+- initialize
+
+  ```
+  yum check-update
+  yum install centos-release-scl
+  yum install epel-release
+  ```
+
 - basic operation
 
   ```
   # yum install gcc
   $ yum list installed
   $ yum list
-  $ yum search name
+  ```
 
-  $ yum whatprovides */clang-c/Index.h
+- search
+
+  ```
+  yum search <package_name>
+
+  yum provides <file_name>
+  yum provides */clang-c/Index.h
+  ```
+
+- operation history / install log
+
+  ```
+  cat /var/log/yum.log
+  yum history
+  yum history list <n>
   ```
 
 - repository
@@ -710,10 +732,10 @@ start services...
 
 - clean up
 
-	```
-	# rm -rf /var/cache/yum/*
-	# yum clean all
-	```
+  ```
+  rm -rf /var/cache/yum/*
+  yum clean all
+  ```
 - download only
 
   ```
@@ -748,7 +770,8 @@ start services...
     ```
   - check repository : # yum repolist
   
-## yum 設定ファイル
+## yum config
+
 - /etc/yum.conf
 
 - proxy
