@@ -715,6 +715,16 @@ start services...
   yum provides */clang-c/Index.h
   ```
 
+- update
+
+  ```
+  yum check-update
+  yum update <package_name>
+  
+  # update all package without kernel
+  yum update --exclude=kernel*
+  ```
+
 - operation history / install log
 
   ```
