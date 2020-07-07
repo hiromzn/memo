@@ -1,6 +1,15 @@
+### shbang
+
+```
+#!/usr/bin/env bash
+
+#!/usr/bin/bash
+```
+
+
 ### editor
 
-- ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“•ÒWƒ‚[ƒh
+- ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ç·¨é›†ãƒ¢ãƒ¼ãƒ‰
 
   ```
   set -o vi
@@ -30,42 +39,42 @@
 
 ### shell path
 
-- ƒXƒNƒŠƒvƒg‚ª”z’u‚³‚ê‚Ä‚¢‚éâ‘ÎƒpƒX‚Ìæ“¾
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆãŒé…ç½®ã•ã‚Œã¦ã„ã‚‹çµ¶å¯¾ãƒ‘ã‚¹ã®å–å¾—
 
   ```
   MYDIR="$(dirname $(which $0))";
   ```
 
-  - bash‚Å‚ ‚ê‚ÎˆÈ‰º‚Ì‚æ‚¤‚È•û–@‚à‚ ‚éH
+  - bashã§ã‚ã‚Œã°ä»¥ä¸‹ã®ã‚ˆã†ãªæ–¹æ³•ã‚‚ã‚ã‚‹ï¼Ÿ
 
     ```
     #!/bin/bash
     ROOT=$( dirname $( readlink -f $0 ) )
     ```
 
-- ƒXƒNƒŠƒvƒg‚ªÀs‚³‚ê‚½ƒfƒBƒŒƒNƒgƒŠ‚Ìâ‘ÎƒpƒX‚Ìæ“¾
+- ã‚¹ã‚¯ãƒªãƒ—ãƒˆãŒå®Ÿè¡Œã•ã‚ŒãŸãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã®çµ¶å¯¾ãƒ‘ã‚¹ã®å–å¾—
 
   ```
   SCRIPT_DIR=$(cd $(dirname $0); pwd)
   ```
 
-  - ’ˆÓF@PATH‚ÅƒT[ƒ`‚µ‚½ƒXƒNƒŠƒvƒg‚Ìê‡‚ÍAƒRƒ}ƒ“ƒh‚ğŒÄ‚Ño‚µ‚½ƒfƒBƒŒƒNƒgƒŠ–¼‚Æ‚È‚éB
+  - æ³¨æ„ï¼šã€€PATHã§ã‚µãƒ¼ãƒã—ãŸã‚¹ã‚¯ãƒªãƒ—ãƒˆã®å ´åˆã¯ã€ã‚³ãƒãƒ³ãƒ‰ã‚’å‘¼ã³å‡ºã—ãŸãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªåã¨ãªã‚‹ã€‚
 
 ### environment
 
 ```
-${parm<‹L†>word}
+${parm<è¨˜å·>word}
 ```
 
-| ‹L†		| parm=NULL		| parm!=NULL		|
+| è¨˜å·		| parm=NULL		| parm!=NULL		|
 |---------------|-----------------------|-----------------------|
-| :-		| ®=word, parm=NULL	| ®=parm, parm=parm	|
-| :=		| ®=word, parm=word	| ®=parm, parm=parm	|
-| :?		| error	   		| ®=parm, parm=parm	|
-| :+		| ®=NULL, parm=NULL	| ®=word, parm=parm	|
+| :-		| å¼=word, parm=NULL	| å¼=parm, parm=parm	|
+| :=		| å¼=word, parm=word	| å¼=parm, parm=parm	|
+| :?		| error	   		| å¼=parm, parm=parm	|
+| :+		| å¼=NULL, parm=NULL	| å¼=word, parm=parm	|
 
 - ```${parameter:-word}```
-  - prarmeter‚ªNULL‚È‚ç’l‚Íword‚É‚È‚éB
+  - prarmeterãŒNULLãªã‚‰å€¤ã¯wordã«ãªã‚‹ã€‚
     ```
 	$ echo ${FOO:-val}
 	val
@@ -74,7 +83,7 @@ ${parm<‹L†>word}
     ```
 
 - ```${parameter:=word}```
-  - parameter‚ªNULL‚È‚ç’l‚Íword‚É‚È‚èAparameter‚Ì’l‚àword‚É‚È‚éB
+  - parameterãŒNULLãªã‚‰å€¤ã¯wordã«ãªã‚Šã€parameterã®å€¤ã‚‚wordã«ãªã‚‹ã€‚
     ```
 	$ echo ${FOO:=val}
 	val
@@ -84,8 +93,8 @@ ${parm<‹L†>word}
 	
 
 - ```${parameter:?word}```
-  - parameter‚ªNULL‚È‚çerror‚É‚È‚éB
-  - parameter‚É’l‚ª‚ ‚ê‚ÎAparameter‚Ì’l‚Æ‚È‚éB
+  - parameterãŒNULLãªã‚‰errorã«ãªã‚‹ã€‚
+  - parameterã«å€¤ãŒã‚ã‚Œã°ã€parameterã®å€¤ã¨ãªã‚‹ã€‚
     ```
 	$ echo ${FOO:-val}
 	bash: FOO: val
@@ -93,13 +102,13 @@ ${parm<‹L†>word}
 	<null>
     ```
 - ```${parameter:+word}```
-  - parameter‚ªNULL‚Ì‚Æ‚«A®‚Ì’l‚ÍNULL‚É‚È‚éB
-  - parameter‚Ì’l‚ª‚ ‚é‚Æ‚«A®‚Ì’l‚Íword‚Ì’l‚É‚È‚é‚ªAparameter‚Ì’l‚Í‚»‚Ì‚Ü‚ÜB
+  - parameterãŒNULLã®ã¨ãã€å¼ã®å€¤ã¯NULLã«ãªã‚‹ã€‚
+  - parameterã®å€¤ãŒã‚ã‚‹ã¨ãã€å¼ã®å€¤ã¯wordã®å€¤ã«ãªã‚‹ãŒã€parameterã®å€¤ã¯ãã®ã¾ã¾ã€‚
 
 - ${parameter:offset}
 - ${parameter:offset:length}
 
-## ”z—ñ
+## é…åˆ—
 
 ```
 array=(111 "foo" 222 "bar" 333 "foobar")
@@ -125,7 +134,7 @@ do
 done
 ```
 
-### teeƒRƒ}ƒ“ƒh‚ğg‚Á‚ÄAstdout, stderr‚ğ•Ê‚Ìƒtƒ@ƒCƒ‹‚É‹L˜^‚·‚éB
+### teeã‚³ãƒãƒ³ãƒ‰ã‚’ä½¿ã£ã¦ã€stdout, stderrã‚’åˆ¥ã®ãƒ•ã‚¡ã‚¤ãƒ«ã«è¨˜éŒ²ã™ã‚‹ã€‚
 
 ```
 command > >(tee stdout.log) 2> >(tee stderr.log >&2)
@@ -142,24 +151,24 @@ comments:
 	http://stackoverflow.com/questions/692000/how-do-i-write-stderr-to-a-file-while-using-tee-with-a-pipe
 ```
 
-### •¶–@ƒ`ƒFƒbƒN
+### æ–‡æ³•ãƒã‚§ãƒƒã‚¯
 
   $ /bin/bash -n foo.sh
   $ /bin/sh -n foo.sh
 
-  * •Ï”‚Ìƒ^ƒCƒvƒ~ƒX‚È‚Ç‚Å‚ÍƒGƒ‰[‚ªo‚È‚¢
+  * å¤‰æ•°ã®ã‚¿ã‚¤ãƒ—ãƒŸã‚¹ãªã©ã§ã¯ã‚¨ãƒ©ãƒ¼ãŒå‡ºãªã„
 
-### shebang‚ÌŠÂ‹«ˆË‘¶‚Ì‰ñ”ğ
+### shebangã®ç’°å¢ƒä¾å­˜ã®å›é¿
 
-@ƒVƒFƒ‹ƒXƒNƒŠƒvƒg‚ğÀs‚·‚éƒRƒ}ƒ“ƒh‚ÌƒpƒX‚ªŠÂ‹«‚É‚æ‚Á‚ÄˆÙ‚È‚éê‡‚ÌÀŒ»•û–@
+ã€€ã‚·ã‚§ãƒ«ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’å®Ÿè¡Œã™ã‚‹ã‚³ãƒãƒ³ãƒ‰ã®ãƒ‘ã‚¹ãŒç’°å¢ƒã«ã‚ˆã£ã¦ç•°ãªã‚‹å ´åˆã®å®Ÿç¾æ–¹æ³•
 
-@#!/usr/bin/env sh
+ã€€#!/usr/bin/env sh
 
-@iQljhttp://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%90%E3%83%B3_(Unix)
+ã€€ï¼ˆå‚è€ƒï¼‰http://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%90%E3%83%B3_(Unix)
 
 
 
-### ^C‚Åq‹Ÿ‚ÌƒvƒƒZƒX‚ğŠÜ‚ß‚ÄI—¹‚³‚¹‚é•û–@
+### ^Cã§å­ä¾›ã®ãƒ—ãƒ­ã‚»ã‚¹ã‚’å«ã‚ã¦çµ‚äº†ã•ã›ã‚‹æ–¹æ³•
 
 ```
   main_pid=$$;
@@ -173,7 +182,7 @@ comments:
   }
 ```
 
-### argument‚Ìˆ—
+### argumentã®å‡¦ç†
 
 ```
   while getopts "vx:n" opt; do
@@ -185,19 +194,29 @@ comments:
   done
 ```
 
-### •¶š—ñ‚Ìˆ—
+```
+while [ $# -gt 0 ]; do
+    case "$1" in
+    linux ) make_os="linux";;
+    hpux | HPUX | HP-UX | ca ) make_os="hpux";;
+    esac
+    shift;
+done
+```
 
-- ¶’[‚Ìœ‹
-  —á) a=a/b/c/d
+### æ–‡å­—åˆ—ã®å‡¦ç†
+
+- å·¦ç«¯ã®é™¤å»
+  ä¾‹) a=a/b/c/d
       echo ${a##*/} --> "d";
       echo ${a#*/} --> "b/c/d";
 
-- ‰E’[‚Ìœ‹
-  —á) a=a/b/c/d
+- å³ç«¯ã®é™¤å»
+  ä¾‹) a=a/b/c/d
       echo ${a%%/*} --> "a";
       echo ${a%/*} --> "a/b/c";
 
-### ”z—ñ
+### é…åˆ—
 
 ```
 [hmizuno@hpjcta bin]$ cat test.sh
