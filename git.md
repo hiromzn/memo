@@ -248,6 +248,28 @@ git remote add <name1> uid@hostname:<path>
 git fetch <name1>
 git checkout <branch_name>
 ```
+
+  - tips:
+
+```
+git fetch <remote_name>
+
+ERROR: "sh: git-upload-pack:  not found."
+
+1. <<REMOTE>> : search absolute path git-upload-pack command on remote host
+
+  $ login remote
+  $ which git-upload-pack
+  /usr/local/bin/git-upload-pack
+
+2. <<LOCAL>> : setup remote config
+
+git config remote.<remote_name>.uploadpack /usr/local/bin/git-upload-pack
+git config remote.<remote_name>.receivepack /usr/local/bin/git-receive-pack
+
+  ex : git config remote.origin.uploadpack /path/to/git-upload-pack
+```
+
   - path
 
     - ~foo/path
