@@ -16,9 +16,38 @@ npm config set https-proxy http://host:8080
 
 ## install: centos
 
+- yum install
+
 ```
 yum install nodejs
 ```
+
+- install newest version
+
+```
+# install repository data
+yum install https://rpm.nodesource.com/pub_12.x/el/7/x86_64/nodesource-release-el7-1.noarch.rpm
+
+# check information of nodejs
+yum info nodejs
+>>> Version     : 12.18.2
+
+yum install nodejs
+
+node -v
+v12.18.2
+```
+
+- nvm
+
+```
+curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+nvm ls-remote
+nvm install <versio_string>   # 12.X.X
+node -v
+nvm ls
+```
+
 ## install: mac
 
 - install homebrew
