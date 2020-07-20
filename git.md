@@ -53,6 +53,39 @@ git reset --hard "HEAD@{1}"
   HEAD is now at 64606a0 third commit
 ```
 
+## add
+
+- git add -A : 追加されたファイルも含め全部のファイルをaddする。
+- git add -u : バージョン管理しているファイルだけaddする。
+- git add file_name : 指定したファイルだけaddする。
+
+- git add -p
+  -	修正したソースの一部分だけ選択してStagingする。
+  - sub command
+    - y	yes : stage this hunk
+    - n	do not stage this hunk
+    - s	split the current hunk into smaller hunks
+    - e	manulally edit the current hunk
+
+  - hunk … Stagingする対象のソースコードの一部分				
+
+  - how to edit
+    - 行の削除をキャンセルしたい場合は、行頭の"-"をスペース" "に変更する。(-を削除すると正しく動作しない。）			
+    - 行の追加をキャンセルしたい場合は、"+"が付いている行を削除する。			
+    - 修正しないと、削除と追加がそのまま行われる。			
+
+  - sample
+```
+    -OPTA=option_a_string		
+    +OPTB=option_b_string		
+```
+    - 削除のキャンセル：		
+      - 変更前	-OPTA=option_a_string
+      - 変更後	 OPTA=option_a_string
+    - 削除のキャンセル：		
+      - 変更前	+OPTB=option_b_string
+      - 変更後	行を削除
+ 
 ## rebase
 
 ```
@@ -1344,12 +1377,6 @@ $ git config --global https.proxy http://proxy.jpn.hp.com:8080
 	    git log
 	    git status
 
-- git add
-
-  - git add -A : 追加されたファイルも含め全部のファイルをaddする。
-  - git add -u : バージョン管理しているファイルだけaddする。
-  - git add file_name : 指定したファイルだけaddする。
-  
 - how to commit
 
       git add -A
