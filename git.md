@@ -53,6 +53,16 @@ git reset --hard "HEAD@{1}"
   HEAD is now at 64606a0 third commit
 ```
 
+## checkout : switch : restore
+
+- create new branch
+  - git checkout -b <branch_name>
+  - git switch -c <branch_name> : (-c : create)
+
+- restore files
+  - git checkout <file_name>
+  - git restore <file_name>
+
 ## add
 
 - git add -A : 追加されたファイルも含め全部のファイルをaddする。
