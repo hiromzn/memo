@@ -60,18 +60,37 @@
 
   - 注意：　PATHでサーチしたスクリプトの場合は、コマンドを呼び出したディレクトリ名となる。
 
+### parameter replace
+
+```
+${parm<記号>word}
+```
+
+| 記号	| function |
+|-------|----------|
+| %		| 最短後置パターンの削除 |
+| %%	| 最長後置パターンの削除 |
+| #		| 最短前置パターンの削除 |
+| ##	| 最長前置パターンの削除 |
+
+### parameter length
+
+```
+${#parameter}
+```
+
 ### environment
 
 ```
 ${parm<記号>word}
 ```
 
-| 記号		| parm=NULL		| parm!=NULL		|
-|---------------|-----------------------|-----------------------|
-| :-		| 式=word, parm=NULL	| 式=parm, parm=parm	|
-| :=		| 式=word, parm=word	| 式=parm, parm=parm	|
-| :?		| error	   		| 式=parm, parm=parm	|
-| :+		| 式=NULL, parm=NULL	| 式=word, parm=parm	|
+| 記号		| parm=NULL		| parm!=NULL		| 意味	|
+|---------------|-----------------------|-----------------------|-------|
+| :-		| 式=word, parm=NULL	| 式=parm, parm=parm	| デフォルト値への置換 |
+| :=		| 式=word, parm=word	| 式=parm, parm=parm	| デフォルト値への代入 |
+| :?		| error	   		| 式=parm, parm=parm	| 値の検査とエラー |
+| :+		| 式=NULL, parm=NULL	| 式=word, parm=parm	| 代替値の使用 |
 
 - ```${parameter:-word}```
   - prarmeterがNULLなら値はwordになる。
