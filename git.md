@@ -390,6 +390,7 @@ git show develop
 ```
 # show commit log
 git log
+git log <branch>
 git log --all                         # with all branch
 git log --oneline                     # one line view
 git log --oneline --decorate          # print ref name (branch pointer)

@@ -82,6 +82,15 @@ cp /usr/local/share/gtags/gtags.vim $HOME/.vim/plugin
 
 # gcc
 
+- show all gcc internal defined macro
+
+```
+gcc -dM -E - < /dev/null
+
+# sample operation :
+# gcc -dM -E - < /dev/null |grep linux
+```
+
 - install basic version
 ```
 # yum install gcc
