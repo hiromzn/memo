@@ -327,6 +327,27 @@ LANG=ja_JP.eucjp
   japanese.euc
   ```
 
+- delete ja_JP.XXXX
+
+  ```
+  # localedef --delete-from-archive ja_JP.sjis
+  # locale -a |grep ja_JP
+  ja_JP
+  ja_JP.eucjp
+  ja_JP.ujis
+  ja_JP.utf8
+  ```
+
+- list localedef
+
+  ```
+  # localedef --list-archive |grep ja_JP
+  ja_JP
+  ja_JP.eucjp
+  ja_JP.ujis
+  ja_JP.utf8
+  ```
+
 - SJISファイルの扱い
 
 ```
