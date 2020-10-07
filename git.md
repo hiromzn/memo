@@ -53,16 +53,6 @@ git reset --hard "HEAD@{1}"
   HEAD is now at 64606a0 third commit
 ```
 
-## checkout : switch : restore
-
-- create new branch
-  - git checkout -b <branch_name>
-  - git switch -c <branch_name> : (-c : create)
-
-- restore files
-  - git checkout <file_name>
-  - git restore <file_name>
-
 ## add
 
 - git add -A : 追加されたファイルも含め全部のファイルをaddする。
@@ -431,12 +421,35 @@ git branch --contains HEAD  # show current branch only
 git branch -a
 ```
 
-## checkout
+
+## checkout : switch : restore
 
 - chenge branch / commit
-
   - git checkout <branch_name>
   - git checkout <commit_ID>
+
+- create new branch
+  - git checkout -b <branch_name>
+  - git switch -c <branch_name> : (-c : create)
+
+- restore files
+  - git checkout <file_name>
+  - git restore <file_name>
+
+- merge conflict
+  - git merge other_branch
+  - get other_branch contents
+    - git checkout --others files
+  - get own branch contents
+    - git checkout --ours files
+
+- rebase conflict
+  - git checkout moved_branch
+  - git rebase base_branch
+  - get base_branch contents
+    - git checkout --ours files  (because you are on base_branch and apply commits of moved_branch)
+  - get your branch contents (moved branch)
+    - git checkout --others files
 
 - ファイルの復活・復元
 
