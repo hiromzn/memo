@@ -421,6 +421,12 @@ git branch --contains HEAD  # show current branch only
 git branch -a
 ```
 
+## pull
+
+```
+git pull
+git reset --hard origin/<branch_name>  # force pull branch
+```
 
 ## checkout : switch : restore
 
