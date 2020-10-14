@@ -1,3 +1,9 @@
+### cscope
+
+- https://github.com/tsuyopon/memo/blob/master/DEVTOOLS/Cscope.md
+- tag jump tool for C / C++ / Java / PHP4
+- has plugin for vim
+
 ### gnu global
 - https://www.gnu.org/software/global/
 
