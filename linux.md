@@ -312,6 +312,24 @@ LANG=ja_JP.eucjp
 
 # 文字コード
 
+- localedef
+
+  ```
+  $ localedef -f <charmap> -i <sourcefile> <name>
+
+  charmap : /usr/share/i18n/chrmaps/
+	WINDOWS-31J
+	SHIFT_JIS
+  sourcefile : /usr/share/i18n/locales/ja_JP
+
+  repository : /usr/lib/locale/locale-archive
+
+  $ localedef --help
+  Systems directory for character maps : /usr/share/i18n/charmaps
+		                repertoire maps: /usr/share/i18n/repertoiremaps
+s					    locale path    : /usr/lib/locale:/usr/share/i18n
+  ```
+
 - SJIS対応(RHEL, CentOS)
 
   ```
