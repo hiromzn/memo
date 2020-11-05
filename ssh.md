@@ -42,3 +42,13 @@ $ cat ~/.ssh/config
 KexAlgorithms +diffie-hellman-group1-sha1
 Ciphers +aes128-cbc,3des-cbc,aes192-cbc,aes256-cbc
 ```
+
+```
+# specify algotithm on command line
+$ ssh -c aes128-cbc user_name@hostname
+```
+
+```
+# check client algotithm
+$ ssh -Q cipher
+```
