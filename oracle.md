@@ -2,6 +2,10 @@
 
 - https://www.oracle.com/technetwork/jp/database/enterprise-edition/documentation/index.html
 
+# config
+
+- tnsnames.ora
+
 # proc
 
 - usage
