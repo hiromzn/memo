@@ -206,6 +206,21 @@ type=CWD msg=audit(1373464694.690:74):  cwd="/usr/local/tmp/c"
 type=PATH msg=audit(1373464694.690:74): item=0 name="/usr/local/tmp/test.log" inode=414336 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00
 ```
 
+### rm
+
+- remove / delete bad file with bad char code
+
+```
+$ ls
+--bad_file_name
+
+$ rm *
+<< can NOT delete --bad_file_name
+
+# you can delete it by the following command
+$ rm ./-*
+```
+
 ### diff
 
 - create patch file
