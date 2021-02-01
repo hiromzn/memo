@@ -1,3 +1,31 @@
+### tool list for linux
+
+```
+$ yum history
+ID     | Command line             | Date and time    | Action(s)      | Altered
+-------------------------------------------------------------------------------
+    44 | install tmux             | 2020-11-05 17:25 | Install        |    2   
+    43 | install clang-devel      | 2020-10-22 13:34 | Install        |    1   
+    42 | install clang            | 2020-10-22 13:33 | Install        |    3   
+    41 | install tcsh             | 2020-10-15 09:35 | Install        |    1   
+    40 | install devtoolset-7     | 2020-08-10 10:37 | Install        |   29   
+    39 | install devtoolset-9     | 2020-08-08 14:28 | I, U           |   50   
+    38 | install centos-release-s | 2020-08-08 14:26 | Install        |    2   
+    37 | install scl-utils        | 2020-08-08 14:26 | Install        |    1   
+    36 | install gcc-gfortran     | 2020-08-08 10:54 | Install        |    4   
+    35 | install yum-utils        | 2020-08-06 15:45 | I, U           |    5   
+    34 | install p7zip            | 2020-08-06 15:19 | Install        |    1   
+    33 | erase autoconf           | 2020-07-15 11:31 | Erase          |    1   
+    32 | install autoconf         | 2020-07-15 10:55 | Install        |    3   
+    31 | install gdb              | 2020-07-15 09:44 | Install        |    1   
+    30 | install nodejs           | 2020-07-14 15:45 | Install        |    1   
+    29 | erase nodejs             | 2020-07-14 15:44 | Erase          |    2   
+    28 | install https://rpm.node | 2020-07-14 15:42 | Install        |    1   
+    27 | install nodejs           | 2020-07-14 14:30 | Install        |    3   
+    26 | install mlocate          | 2020-07-07 17:45 | Install        |    1   
+    25 | install libstdc++.i686   | 2020-07-03 23:45 | Install        |    2
+```
+
 ### tmux
 
 - terminal multiplexer
