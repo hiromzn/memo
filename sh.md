@@ -153,7 +153,19 @@ do
 done
 ```
 
-### teeコマンドを使って、stdout, stderrを別のファイルに記録する。
+### redirect
+- sample code
+
+```
+ls /foo >log	# redirect stdout only
+ls /foo 2>log	# redirect stderr only
+ls /foo &> log	# redirect stdout/stderr
+
+ls /foo | cat >log	# pipe stdout only	
+ls /foo |& cat >log	# pipe stdout/stderr
+```
+
+- teeコマンドを使って、stdout, stderrを別のファイルに記録する。
 
 ```
 command > >(tee stdout.log) 2> >(tee stderr.log >&2)
