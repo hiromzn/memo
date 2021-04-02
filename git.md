@@ -417,7 +417,8 @@ git tag -n[<n>]  ..... print tag message with <n> lines
 # show branch
 git branch
 git branch -r
-git branch --contains HEAD  # show current branch only
+git branch --contains HEAD  # show current branch (branch name of HEAD)
+git branch --contains       # show current branch (default is HEAD)
 git branch -a
 ```
 
