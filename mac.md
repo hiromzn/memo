@@ -1,3 +1,17 @@
+## backup
+
+### tmutil
+
+- timemachine command line tool
+
+```
+tmutil snapshot
+tmutil listbackups
+
+$ cd /Volumes/MobileBackups/Backups.backupdb/MyMini
+$ tmutil compare 2012-04-20-160854 2012-04-20-160951
+```
+
 ## doxygen
 
 ```
