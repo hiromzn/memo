@@ -1,3 +1,11 @@
+# language tools
+
+- Compiler Explorer
+
+  - interactive compiler (source code -> assembly code)
+  - https://godbolt.org/
+  - https://github.com/compiler-explorer/compiler-explorer
+
 ### tool list for linux
 
 ```
