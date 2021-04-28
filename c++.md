@@ -1,3 +1,25 @@
+# tips
+
+### cast
+
+- c++ style cast for const
+  - ``` const_cast< TYPE >( xxxx ) ```
+  - example
+    ```
+    $ cat -n test.cpp
+         1  int main()
+         2  {
+         3          const char *cp = "abc";
+         4          char *okp = const_cast<char*>(cp);
+         5          char *ngp = cp;
+         6  }
+    $ LANG=C g++ test.cpp
+    test.cpp: In function 'int main()':
+    test.cpp:5:14: error: invalid conversion from 'const char*' to 'char*' [-fpermissive]
+      char *ngp = cp;
+                  ^
+    ```
+
 # reference
 
 - http://cpp-lang.sevendays-study.com/
