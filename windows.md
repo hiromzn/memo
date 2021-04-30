@@ -1,9 +1,17 @@
-# URL
+### msys2
+
+- use symlink
+
+```
+# vi .bashrc
+export MSYS=winsymlinks:lnk
+```
+### URL
 
 - shortcuts
   - https://pc-karuma.net/windows-10-keyboard-shortcuts-list/
-  
-### work space / desctop / screen switch
+
+#### work space / desctop / screen switch
 
 | key binding     | function |
 |-----------------|----------------------------------|
@@ -34,6 +42,8 @@ $ cacls file_name
 	タスクスケジューラ
 
 ### robocopy
+
+```
   ---------------------------------------------------------------------------
    ROBOCOPY     ::     Windows の堅牢性の高いファイル コピー
   ---------------------------------------------------------------------------
@@ -46,8 +56,10 @@ $ cacls file_name
 
 http://amaotolog.com/backup/entry188.html
 毎日12時にrobocopyでパソコンを自動的にバックアップする方法
+```
 
-how to force foramt
+### how to force foramt
+```
 	start admin console ( RightClick[Windows] -> Admin Console)
 
 	C:\WINDOWS\system32>diskpart
@@ -75,12 +87,15 @@ how to force foramt
 	Disk Management
 		clelect disk & right click -> Initialize disk
 			->
-Memory dump
-	"%SystemRoot%\MEMORY.DMP" 又は "%SystemRoot%\Minidump"
-	"Windows" フォルダの直下
+```
 
-Bluetooth マウス　セットアップ
+### Memory dump
+ - "%SystemRoot%\MEMORY.DMP" 又は "%SystemRoot%\Minidump"
+ - "Windows" フォルダの直下
 
+### Bluetooth マウス　セットアップ
+
+```
 　切れる場合の設定
 
 　１．「コントロールパネル ? デバイスマネージャー」
@@ -91,10 +106,10 @@ Bluetooth マウス　セットアップ
 　２．「コントロールパネル ? ネットワークと共有センター」
 　　　「アダプターの設定の変更」
 　　　「Bluetooth ネットワーク接続」を選択して、「このネットワーク デバイスを無効にする」をクリック
+```
 
-
-(1)スタートアップフォルダ
-
+### スタートアップフォルダ
+```
 　スタートアップフォルダにプログラムへのショートカットを保存すれば、
 　ユーザログオン時に自動的にプログラムが実行されます。スタートアップフォルダは以下の2種類があります。
 
@@ -110,14 +125,18 @@ Bluetooth マウス　セットアップ
 　【すべてのユーザ共通】
 　　C:\ProgramData\Microsoft\Windows\スタート メニュー\Programs\スタートアップ
 　　(英語表示の場合：C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup)
+```
 
-index
+### index
+```
 	コントロールパネル　→　インデックスのオプション
 		→　変更
 		→　詳細設定
 	OutLook　→　検索（タグ）　→　検索ツール　→　インデックスの状況
+```
 
-chcp
+### chcp
+```
 	$ chcp
 	$ chcp 932
 	$ chcp
@@ -134,9 +153,11 @@ chcp
 	                       Japanese (JIS-Allow 1 byte Kana - SO/SI)
 	51932    euc-jp        EUC Japanese
 	65001    utf-8         Unicode (UTF-8)
+```
 
-network: netsh : proxy
+### network: netsh : proxy
 
+```
 	>netsh
 	netsh>winhttp
 	netsh winhttp>show proxy
@@ -146,8 +167,10 @@ network: netsh : proxy
 	>netsh
 	netsh>winhttp
 	netsh winhttp>import proxy ie
+```
 
-hosts files:
+### hosts files:
+```
 	c:\windows\system32\drivers\etc\hosts
 
 	編集するには管理者権限が必要
@@ -155,18 +178,19 @@ hosts files:
 	編集方法
 	　管理者権限のコマンドプロンプトを利用
 	　メモ帳アイコンを右クリックー＞管理者として実行して編集
-	
-日付：時刻の表示フォーマットの変更
+```
 
-　Windows7
+### 日付：時刻の表示フォーマットの変更
 
-　コントロールパネル
-　　「時計・言語および地域」
-　　　地域と言語
-　　　　日付、時刻または数値の形式の変更
+- Windows7
 
-Windows7: StartUPの設定
+  - コントロールパネル
+　  - 「時計・言語および地域」
+　　  - 地域と言語
+　　　　- 日付、時刻または数値の形式の変更
 
+### Windows7: StartUPの設定
+```
 　Cドライブ
 　└Users
 　　└（ユーザー名）
@@ -177,23 +201,29 @@ Windows7: StartUPの設定
 　　　　　　　└Start Menu
 　　　　　　　　└Programs
 　　　　　　　　　└Startup
+```
 
-network
-  c:/WINDOWS/system32/drivers/etc/hosts
+### network
+- c:/WINDOWS/system32/drivers/etc/hosts
 
-netstat -ano
-  -o option彫ﾋ彫闥､ﾃ彫ﾆ徴ﾗ徴峵･ｻ徴ｹ鎚ﾖ鳥謦､竰ﾉｽ直ｨ調ﾄ追ｽ
+- netstat
+  - ``` netstat -ano```
+  - o option彫ﾋ彫闥､ﾃ彫ﾆ徴ﾗ徴峵･ｻ徴ｹ鎚ﾖ鳥謦､竰ﾉｽ直ｨ調ﾄ追ｽ
 
+  ```
   c:\>netstat -ano
   Proto  Local Address          Foreign Address        State           PID
   TCP    0.0.0.0:135            0.0.0.0:0              LISTENING       1088
   TCP    0.0.0.0:445            0.0.0.0:0              LISTENING       4
   TCP    0.0.0.0:1098           0.0.0.0:0              LISTENING       3656
+  ```
 
-default webブラウザの変更
+### default webブラウザの変更
+```
   コントロールパネル
   --> 「プログラムの追加と削除」
   --> 左の：「プログラムのアクセスと既定の設定」
   --> 「カスタム」
   --> 右のプルダウン
   --> 既定のwebブラウザを選択して下さい。
+```
