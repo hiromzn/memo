@@ -41,6 +41,22 @@ $ cacls file_name
 　　　管理ツール
 	タスクスケジューラ
 
+### MSYS2
+
+- sourceforge.net/projects/msys2/
+
+- install
+  - download installer
+  - run it
+  - install directory : c:\msys64
+  - on bash
+    - pacman -Syu
+	- pacman -Syu
+	- pacman -S openssh
+	- pacman -S vim
+	- pacman -S git
+	- pacman -S tmux
+
 ### robocopy
 
 ```

@@ -18,6 +18,29 @@
   - ホストとコンテナ間でのファイルコピー (cp)
   - コンテナを削除 (rm)
 
+## mac log
+```
+docker version
+docker run hello-world
+docker pull centos:centos7
+docker images
+
+docker run -it --name=c7 centos:centos7 /bin/bash
+[container_v7] $ exit
+
+docker ps -a
+CONTAINER ID   IMAGE            COMMAND       CREATED          STATUS                      PORTS     NAMES
+566aaf76a996   centos:centos7   "/bin/bash"   51 seconds ago   Exited (0) 41 seconds ago             c7
+435608833da2   hello-world      "/hello"      4 minutes ago    Exited (0) 4 minutes ago              goofy_clarke
+
+docker start c7
+docker ps
+..... entory of c7
+
+docker attach c7
+[container_v7] $ exit
+```
+
 #### sample operation
 
 ```
