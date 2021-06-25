@@ -761,6 +761,20 @@ start services...
   yum install epel-release
   ```
 
+- tips
+
+  - can NOT install manual
+    - check /etc/yum.conf and commnt out
+      ```
+      # no manual flag
+      # tsflags=nodocs
+	  ```
+    - overwrite this option in command line
+	  ```
+	  yum reinstall --setopt=tsflags='' -y <package_name>
+	  yum install --setopt=tsflags='' -y <package_name>
+	  ```
+
 - basic operation
 
   ```
