@@ -131,7 +131,9 @@ gcc (GCC) 4.8.5 20150623 (Red Hat 4.8.5-36)
 
 ```
 
-# sudo
+# command
+
+### sudo
 
 ```
 # visudo
@@ -141,7 +143,7 @@ foo         ALL=(ALL)       ALL
 
 ```
 
-# audit
+### audit
 
 - log file
   - /var/log/audit/audit.log
@@ -204,6 +206,14 @@ LIST_RULES: exit,always watch=/usr/local/tmp/test.log success=1 (0x1) syscall=op
 type=SYSCALL msg=audit(1373464694.690:74): arch=40000003 syscall=5 success=yes exit=3 a0=8048614 a1=0 a2=1b6 a3=804862d items=1 ppid=2044 pid=2162 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=2 comm="file" exe="/usr/local/tmp/c/file" key=(null)
 type=CWD msg=audit(1373464694.690:74):  cwd="/usr/local/tmp/c"
 type=PATH msg=audit(1373464694.690:74): item=0 name="/usr/local/tmp/test.log" inode=414336 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00
+```
+
+### grep
+
+- extract word
+```
+$ cat foo |grep -o -E '\w+'
+$ cat foo |grep -o -E '\w+' |sort -u
 ```
 
 ### rm
