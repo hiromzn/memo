@@ -47,32 +47,32 @@ ID     | Command line             | Date and time    | Action(s)      | Altered
   - prefix : Ctrl+b (default)
 
   ```
-  prefix + ?	ƒL[ƒoƒCƒ“ƒhˆê——
-  prefix + s	ƒZƒbƒVƒ‡ƒ“‚Ìˆê——•\¦
-  prefix + c	V‹KƒEƒBƒ“ƒhƒEì¬E’Ç‰Á
-  prefix + w	ƒEƒBƒ“ƒhƒE‚Ìˆê——
-  prefix + &	ƒEƒCƒ“ƒhƒE‚Ì”jŠü
-  prefix + n	Ÿ‚ÌƒEƒCƒ“ƒhƒE‚ÖˆÚ“®
-  prefix + p	‘O‚ÌƒEƒCƒ“ƒhƒE‚ÖˆÚ“®
-  prefix + |	¶‰E‚ÉƒyƒCƒ“•ªŠ„
-  prefix + -	ã‰º‚ÉƒyƒCƒ“•ªŠ„
-  prefix + h	¶‚ÌƒyƒCƒ“‚ÉˆÚ“®
-  prefix + j	‰º‚ÌƒyƒCƒ“‚ÉˆÚ“®
-  prefix + k	ã‚ÌƒyƒCƒ“‚ÉˆÚ“®
-  prefix + l	‰E‚ÌƒyƒCƒ“‚ÉˆÚ“®
-  prefix + H	ƒyƒCƒ“‚ğ¶‚ÉƒŠƒTƒCƒY
-  prefix + J	ƒyƒCƒ“‚ğ‰º‚ÉƒŠƒTƒCƒY
-  prefix + K	ƒyƒCƒ“‚ğã‚ÉƒŠƒTƒCƒY
-  prefix + L	ƒyƒCƒ“‚ğ‰E‚ÉƒŠƒTƒCƒY
-  prefix + x	ƒyƒCƒ“‚Ì”jŠü
-  prefix + ƒXƒy[ƒX	ƒyƒCƒ“‚ÌƒŒƒCƒAƒEƒg•ÏX
-  prefix + Ctrl + o	ƒyƒCƒ“‚Ì“ü‚ê‘Ö‚¦
-  prefix + {	ƒyƒCƒ“‚Ì“ü‚ê‘Ö‚¦(ã•ûŒü)
-  prefix + }	ƒyƒCƒ“‚Ì“ü‚ê‘Ö‚¦(‰º•ûŒü)
-  prefix + [	ƒRƒs[ƒ‚[ƒh‚ÌŠJn(ƒJ[ƒ\ƒ‹ƒL[‚ÅˆÚ“®)
-  prefix + v	ƒRƒs[ŠJnˆÊ’uŒˆ’è(viƒ‚[ƒh)
-  prefix + y	ƒRƒs[I—¹ˆÊ’uŒˆ’è(viƒ‚[ƒh)
-  prefix + Crtl + p	ƒRƒs[“à—e‚Ì“\‚è•t‚¯
+  prefix + ?	ã‚­ãƒ¼ãƒã‚¤ãƒ³ãƒ‰ä¸€è¦§
+  prefix + s	ã‚»ãƒƒã‚·ãƒ§ãƒ³ã®ä¸€è¦§è¡¨ç¤º
+  prefix + c	æ–°è¦ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ä½œæˆãƒ»è¿½åŠ 
+  prefix + w	ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ä¸€è¦§
+  prefix + &	ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã®ç ´æ£„
+  prefix + n	æ¬¡ã®ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã¸ç§»å‹•
+  prefix + p	å‰ã®ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã¸ç§»å‹•
+  prefix + |	å·¦å³ã«ãƒšã‚¤ãƒ³åˆ†å‰²
+  prefix + -	ä¸Šä¸‹ã«ãƒšã‚¤ãƒ³åˆ†å‰²
+  prefix + h	å·¦ã®ãƒšã‚¤ãƒ³ã«ç§»å‹•
+  prefix + j	ä¸‹ã®ãƒšã‚¤ãƒ³ã«ç§»å‹•
+  prefix + k	ä¸Šã®ãƒšã‚¤ãƒ³ã«ç§»å‹•
+  prefix + l	å³ã®ãƒšã‚¤ãƒ³ã«ç§»å‹•
+  prefix + H	ãƒšã‚¤ãƒ³ã‚’å·¦ã«ãƒªã‚µã‚¤ã‚º
+  prefix + J	ãƒšã‚¤ãƒ³ã‚’ä¸‹ã«ãƒªã‚µã‚¤ã‚º
+  prefix + K	ãƒšã‚¤ãƒ³ã‚’ä¸Šã«ãƒªã‚µã‚¤ã‚º
+  prefix + L	ãƒšã‚¤ãƒ³ã‚’å³ã«ãƒªã‚µã‚¤ã‚º
+  prefix + x	ãƒšã‚¤ãƒ³ã®ç ´æ£„
+  prefix + ã‚¹ãƒšãƒ¼ã‚¹	ãƒšã‚¤ãƒ³ã®ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆå¤‰æ›´
+  prefix + Ctrl + o	ãƒšã‚¤ãƒ³ã®å…¥ã‚Œæ›¿ãˆ
+  prefix + {	ãƒšã‚¤ãƒ³ã®å…¥ã‚Œæ›¿ãˆ(ä¸Šæ–¹å‘)
+  prefix + }	ãƒšã‚¤ãƒ³ã®å…¥ã‚Œæ›¿ãˆ(ä¸‹æ–¹å‘)
+  prefix + [	ã‚³ãƒ”ãƒ¼ãƒ¢ãƒ¼ãƒ‰ã®é–‹å§‹(ã‚«ãƒ¼ã‚½ãƒ«ã‚­ãƒ¼ã§ç§»å‹•)
+  prefix + v	ã‚³ãƒ”ãƒ¼é–‹å§‹ä½ç½®æ±ºå®š(viãƒ¢ãƒ¼ãƒ‰)
+  prefix + y	ã‚³ãƒ”ãƒ¼çµ‚äº†ä½ç½®æ±ºå®š(viãƒ¢ãƒ¼ãƒ‰)
+  prefix + Crtl + p	ã‚³ãƒ”ãƒ¼å†…å®¹ã®è²¼ã‚Šä»˜ã‘
   ```
 
 ### cscope
@@ -93,7 +93,7 @@ ID     | Command line             | Date and time    | Action(s)      | Altered
 
 ### PDF tool
 - CutePDF
-- ƒNƒZƒPDF
+- ã‚¯ã‚»ãƒ­PDF
 
 ### benchmark tool
 - hdbench clone
@@ -106,10 +106,15 @@ ID     | Command line             | Date and time    | Action(s)      | Altered
     %b ..... file block size.
 	```
 ### ieHTTPHeaders
-- IE‚É‘g‚İ‚ñ‚ÅAÚ‘±æƒT[ƒo[‚ÌƒzƒXƒg–¼ARefererACookie‚Ì“à—e‚È‚Ç‚ğŠm”F‰Â”\
+- IEã«çµ„ã¿è¾¼ã‚“ã§ã€æ¥ç¶šå…ˆã‚µãƒ¼ãƒãƒ¼ã®ãƒ›ã‚¹ãƒˆåã€Refererã€Cookieã®å†…å®¹ãªã©ã‚’ç¢ºèªå¯èƒ½
 
-### valgring
+### valgrind
+- https://valgrind.org/
 - linux memory leak check tool
+- Valgrind is an instrumentation framework for building dynamic analysis tools.
+```
+valgrind --tool=memcheck --leak-check=full --log-file=/tmp/valgrind.log hoge.exe
+```
 
 ### libevent (http://monkey.org/~provos/libevent/)
 - The libevent API provides a mechanism to execute a callback function
