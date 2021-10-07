@@ -55,6 +55,7 @@ $ cacls file_name
 	- pacman -S openssh
 	- pacman -S vim
 	- pacman -S git
+	- pacman -S tig
 	- pacman -S tmux
 
 ### robocopy
