@@ -351,8 +351,8 @@ LANG=ja_JP.eucjp
 
   $ localedef --help
   Systems directory for character maps : /usr/share/i18n/charmaps
-		                repertoire maps: /usr/share/i18n/repertoiremaps
-s					    locale path    : /usr/lib/locale:/usr/share/i18n
+  repertoire maps: /usr/share/i18n/repertoiremaps
+  locale path    : /usr/lib/locale:/usr/share/i18n
   ```
 
 - SJIS対応(RHEL, CentOS)
