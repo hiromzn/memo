@@ -2,9 +2,9 @@
 
 ```
 #### system
-# yum check-update
-# yum install centos-release-scl
-# yum install epel-release
+yum check-update
+yum install centos-release-scl
+yum install epel-release
 
 #	timedatectl list-timezone
 #	timedatectl set-timezone Aasia/Tokyo
@@ -93,24 +93,24 @@ gcc -dM -E - < /dev/null
 
 - install basic version
 ```
-# yum install gcc
-# gcc --version
+yum install gcc
+gcc --version
 gcc (GCC) 4.8.5 20150623 (Red Hat 4.8.5-36)
 ```
 
 - install newer version
 ```
-# yum install centos-release-scl # install SCL
-# yum search devtoolset # check version
+yum install centos-release-scl # install SCL
+yum search devtoolset # check version
 
-# yum install devtoolset-6-gcc
-# yum install devtoolset-6-gcc-c++
-# yum install devtoolset-7-gcc
-# yum install devtoolset-7-gcc-c++
-# yum install devtoolset-8-gcc
-# yum install devtoolset-8-gcc-c++
+yum install devtoolset-6-gcc
+yum install devtoolset-6-gcc-c++
+yum install devtoolset-7-gcc
+yum install devtoolset-7-gcc-c++
+yum install devtoolset-8-gcc
+yum install devtoolset-8-gcc-c++
 
-# ls /opt/rh/
+ls /opt/rh/
 devtoolset-6  devtoolset-7  devtoolset-8
 ```
 
@@ -170,22 +170,22 @@ foo         ALL=(ALL)       ALL
 
 
 ```
-# show
+$ show
 auditctl -l		# list rule
 auditctl -s		# print audit system status
 
-# delete
+$ delete
 auditctl -D		# DELETE all audit rules
 auditctl -D -k <key>	# DELETE audit rules of <key>
 ```
 
 - sample operation
 ```
-# FILE
+$ FILE
 auditctl -w /home/foo/tmp -k home_foo_tmp # = ( -p rwxa )
 
 auditctl -w /home/foo/tmp/foo -p r -k foo_r
-# log by "run test.sh ( foo/a.sh )"
+$ log by "run test.sh ( foo/a.sh )"
 type=SYSCALL msg=audit(1525138211.248:266442): arch=c000003e syscall=2 success=yes exit=3 a0=1233240 a1=0 a2=ffffffffffffff80 a3=7ffd0d36fb20 items=1 ppid=28186 pid=28187 auid=5604 uid=5604 gid=400 euid=5604 suid=5604 fsuid=5604 egid=400 sgid=400 fsgid=400 tty=pts1 ses=24651 comm="sh" exe="/usr/bin/bash" subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 key="foo_r"
 type=CWD msg=audit(1525138211.248:266442):  cwd="/home/hmizuno/tmp"
 type=PATH msg=audit(1525138211.248:266442): item=0 name="foo/a.sh" inode=21923323 dev=08:02 mode=0100755 ouid=5604 ogid=400 rdev=00:00 obj=unconfined_u:object_r:user_tmp_t:s0 objtype=NORMAL
@@ -193,16 +193,16 @@ type=SYSCALL msg=audit(1525138211.248:266443): arch=c000003e syscall=2 success=y
 type=CWD msg=audit(1525138211.248:266443):  cwd="/home/hmizuno/tmp"
 type=PATH msg=audit(1525138211.248:266443): item=0 name="foo/a.sh" inode=21923323 dev=08:02 mode=0100755 ouid=5604 ogid=400 rdev=00:00 obj=unconfined_u:object_r:user_tmp_t:s0 objtype=NORMAL
 
-# log by "run test.sh ( . ./foo/a.sh )"
+$ log by "run test.sh ( . ./foo/a.sh )"
 type=SYSCALL msg=audit(1525138355.016:266444): arch=c000003e syscall=2 success=yes exit=3 a0=20cc2c0 a1=0 a2=435640 a3=fffffffffffff8c7 items=1 ppid=27936 pid=28225 auid=5604 uid=5604 gid=400 euid=5604 suid=5604 fsuid=5604 egid=400 sgid=400 fsgid=400 tty=pts1 ses=24651 comm="sh" exe="/usr/bin/bash" subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 key="foo_r"
 type=CWD msg=audit(1525138355.016:266444):  cwd="/home/hmizuno/tmp"
 type=PATH msg=audit(1525138355.016:266444): item=0 name="./foo/a.sh" inode=21923323 dev=08:02 mode=0100755 ouid=5604 ogid=400 rdev=00:00 obj=unconfined_u:object_r:user_tmp_t:s0 objtype=NORMAL
 
-# auditctl -a exit,always -S open -F path=/usr/local/tmp/test.log -F success=1
-# auditctl -l
+$ auditctl -a exit,always -S open -F path=/usr/local/tmp/test.log -F success=1
+$ auditctl -l
 LIST_RULES: exit,always watch=/usr/local/tmp/test.log success=1 (0x1) syscall=open
 
-# cat /var/log/audit/audit.log
+$ cat /var/log/audit/audit.log
 type=SYSCALL msg=audit(1373464694.690:74): arch=40000003 syscall=5 success=yes exit=3 a0=8048614 a1=0 a2=1b6 a3=804862d items=1 ppid=2044 pid=2162 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=2 comm="file" exe="/usr/local/tmp/c/file" key=(null)
 type=CWD msg=audit(1373464694.690:74):  cwd="/usr/local/tmp/c"
 type=PATH msg=audit(1373464694.690:74): item=0 name="/usr/local/tmp/test.log" inode=414336 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00
@@ -324,15 +324,15 @@ diff -upNr ../org/dir/b.c ./dir/b.c
 ### System locale
 
 ```
-# localectl status
-# localectl list-locales
+$ localectl status
+$ localectl list-locales
 
-# localectl set-locale LANG=ja_JP.eucjp
-# cat /etc/locale.conf
+$ localectl set-locale LANG=ja_JP.eucjp
+$ cat /etc/locale.conf
 LANG=ja_JP.eucjp
 
 ##### 設定を現在のコンソールに反映するには以下のコマンドを実行します
-# source /etc/locale.conf
+$ source /etc/locale.conf
 ```
 
 # 文字コード
@@ -423,12 +423,12 @@ set nohlsearch
 	テンプレートとして使うことが可能
 
 ```
-# yum install firewalld
-# yum install firewall-config
+$ yum install firewalld
+$ yum install firewall-config
 
-# systemctl start firewalld
-# systemctl stop firewalld
-# systemctl disable firewalld
+$ systemctl start firewalld
+$ systemctl stop firewalld
+$ systemctl disable firewalld
 
 $ systemctl status firewalld
 
@@ -454,9 +454,9 @@ $ firewall-cmd --help
 	繰り返すよりも時間がかかる。
 
 ```
-# firewall-cmd --state
-# firewall-cmd --get-active-zones
-# firewall-cmd --zone=public --list-al
+$ firewall-cmd --state
+$ firewall-cmd --get-active-zones
+$ firewall-cmd --zone=public --list-al
 ```
 
 -  現在読み込まれているサービスを一覧表示
@@ -760,6 +760,51 @@ start services...
   $ chkconfig vsftpd on
   $ service vsftpd start
 
+# rpm
+
+```
+  install:
+    $ rpm -i *.rpm
+    $ rpm -i --force *.rpm
+
+  update
+    $ rpm -U *.rpm
+
+  uninstall:
+    $ rpm -e *.rpm
+
+  get file list from *.rpm file
+    $ rpm -qlp *.rpm
+
+  get file list from system
+    $ rpm -qla
+
+  get package list from system
+    $ rpm -qa
+
+  get file list from installed package
+    $ rpm -ql <package_name>
+
+  get file list of package
+    $ rpm -qlp *.rpm
+
+  get package list which is installed
+    $ rpm -qa
+
+  get file list which is installded
+    $ rpm -qla
+
+  get package name which file depends. (OSにインストールされているファイルが属するパッケージを表示する)
+    $ rpm -qf /usr/bin/sar
+    sysstat-5.0.5-11.rhel4
+
+  extract file : 解凍
+    $ rpm2cpio mysql-toolkit-A.02.00-0.product.redhat.i386.rpm |cpio -idv
+
+  パッケージの依存関係をチェックする
+    rpm -ivh --test foo.rpm
+```
+
 
 # yum
 
@@ -785,39 +830,67 @@ start services...
 	  yum install --setopt=tsflags='' -y <package_name>
 	  ```
 
-- basic operation
+- install / uninstall / update
 
   ```
-  # yum install gcc
-  $ yum list installed
-  $ yum list
-  ```
+  yum install gcc
+  yum reinstall gcc
 
-- search
+  yum erase gcc = (yum remove gcc)
 
-  ```
-  yum search <package_name>
-
-  yum provides <file_name>
-  yum provides */clang-c/Index.h
-  ```
-
-- update
-
-  ```
   yum check-update
   yum update <package_name>
   
   # update all package without kernel
   yum update --exclude=kernel*
+
+  yum update-to		# Update one or all packages to a particular version
+  yum upgrade		# Update packages taking obsoletes into account
+
+  yum localinstall	# Install a package from a local file, http, or ftp
+  yum localinstall XXXX.rpm
+  yum localinstall http://xxxx
+
   ```
 
-- operation history / install log
+- display (list/search)
+
+  ```
+  yum list installed
+  yum list available
+  yum list all
+  yum list kernel
+  yum list
+
+  yum search <package_name>
+  yum updateinfo <package_name>
+
+  yum deplist <package_name>  # dependencies for package
+
+  yum provides <file_name>
+  yum provides */clang-c/Index.h
+  ```
+
+- group
+
+  ```
+  yum grouplist
+  yum groupinfo "web Server"
+  ```
+
+- troubleshoot / maintain / history
 
   ```
   cat /var/log/yum.log
   yum history
+  yum history list
   yum history list <n>
+  yum history info <n>
+  yum history undo <n>
+  yum history redo <n>
+
+  yum clean <package>
+  yum clean all
   ```
 
 - repository
@@ -1236,51 +1309,6 @@ net.ipv4.ip_local_port_range=1024 65000
 
 - GFS (Global File System)
   クラスターワイドでファイルシステムにアクセス
-
-# rpm
-
-```
-  install:
-    $ rpm -i *.rpm
-    $ rpm -i --force *.rpm
-
-  update
-    $ rpm -U *.rpm
-
-  uninstall:
-    $ rpm -e *.rpm
-
-  get file list from *.rpm file
-    $ rpm -qlp *.rpm
-
-  get file list from system
-    $ rpm -qla
-
-  get package list from system
-    $ rpm -qa
-
-  get file list from installed package
-    $ rpm -ql <package_name>
-
-  get file list of package
-    $ rpm -qlp *.rpm
-
-  get package list which is installed
-    $ rpm -qa
-
-  get file list which is installded
-    $ rpm -qla
-
-  get package name which file depends. (OSにインストールされているファイルが属するパッケージを表示する)
-    $ rpm -qf /usr/bin/sar
-    sysstat-5.0.5-11.rhel4
-
-  extract file : 解凍
-    $ rpm2cpio mysql-toolkit-A.02.00-0.product.redhat.i386.rpm |cpio -idv
-
-  パッケージの依存関係をチェックする
-    rpm -ivh --test foo.rpm
-```
 
 ## cpio
 
