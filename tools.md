@@ -34,6 +34,54 @@ ID     | Command line             | Date and time    | Action(s)      | Altered
     25 | install libstdc++.i686   | 2020-07-03 23:45 | Install        |    2
 ```
 
+### cloc
+
+- summary
+  - Count, or compute differences of, lines of source code and comments.
+
+- operation sample
+
+```
+$ cloc --categorized=/tmp/CCC --by-file-by-lang  --force-lang=C,pc * 
+     765 text files.
+     716 unique files.
+     327 files ignored.
+
+github.com/AlDanial/cloc v 1.90  T=0.60 s (854.8 files/s, 325438.2 lines/s)
+------------------------------------------------------------------------------------------
+File                                                   blank        comment           code
+------------------------------------------------------------------------------------------
+MOD/foo/SRC/bar.c					                      182            180           3533
+  :
+COMMON/INC/ccc.h                                          28             54              0
+------------------------------------------------------------------------------------------
+SUM:                                                   20923          44353         130038
+------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+C                              268          13777          30410          94471
+Bourne Shell                   210           6490          12536          24643
+make                            11            292             47           4667
+C/C++ Header                    17            303           1218           2444
+diff                             2              0            142           2272
+SQL                              5             61              0           1541
+-------------------------------------------------------------------------------
+SUM:                           513          20923          44353         130038
+-------------------------------------------------------------------------------
+# categorized file sample:
+# % head /tmp/CCC
+# 160282,(unknown),server-spec.pdf
+# 30976,C,MOD/foo/SRC/bar.pc
+# 3224,C/C++ Header,COMMON/INC/CA.h
+# 3387,C/C++ Header,COMMON/INC/CC.h
+# 13495,C/C++ Header,COMMON/INC/bb.h
+# 10508,(unknown),COMMON/INC/CD.DB10
+# 10552,(unknown),COMMON/INC/CD.DB20
+# 13452,C/C++ Header,COMMON/INC/124.h
+# 4761,C/C++ Header,COMMON/INC/aa.h
+```
 ### tmux
 
 - terminal multiplexer
