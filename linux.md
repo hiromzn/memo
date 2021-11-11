@@ -763,46 +763,27 @@ start services...
 # rpm
 
 ```
-  install:
-    $ rpm -i *.rpm
-    $ rpm -i --force *.rpm
+    $ rpm -i *.rpm				# install
+    $ rpm -i --force *.rpm		# force install force
 
-  update
-    $ rpm -U *.rpm
+    $ rpm -U *.rpm		# update
 
-  uninstall:
-    $ rpm -e *.rpm
+    $ rpm -e *.rpm		# erase (uninstall)
 
-  get file list from *.rpm file
-    $ rpm -qlp *.rpm
+    $ rpm -qlp *.rpm	# get file list from *.rpm file
+    $ rpm -qla			# get file list from system
+    $ rpm -qa			# get package list from system
+    $ rpm -ql <package_name>	# get file list from installed package
+    $ rpm -qlp *.rpm	# get file list of package
+    $ rpm -qa			# get package list which is installed
+    $ rpm -qla			# get file list which is installded
 
-  get file list from system
-    $ rpm -qla
+    # get package name which file depends. (OSにインストールされているファイルが属するパッケージを表示する)
+    $ rpm -qf /usr/bin/sar	# get/search package name which has specific file.
 
-  get package list from system
-    $ rpm -qa
+    $ rpm2cpio mysql-toolkit-A.02.00-0.product.redhat.i386.rpm |cpio -idv	# extract file : 解凍
 
-  get file list from installed package
-    $ rpm -ql <package_name>
-
-  get file list of package
-    $ rpm -qlp *.rpm
-
-  get package list which is installed
-    $ rpm -qa
-
-  get file list which is installded
-    $ rpm -qla
-
-  get package name which file depends. (OSにインストールされているファイルが属するパッケージを表示する)
-    $ rpm -qf /usr/bin/sar
-    sysstat-5.0.5-11.rhel4
-
-  extract file : 解凍
-    $ rpm2cpio mysql-toolkit-A.02.00-0.product.redhat.i386.rpm |cpio -idv
-
-  パッケージの依存関係をチェックする
-    rpm -ivh --test foo.rpm
+    $ rpm -ivh --test foo.rpm		# パッケージの依存関係をチェックする
 ```
 
 
