@@ -355,6 +355,12 @@ $ source /etc/locale.conf
   locale path    : /usr/lib/locale:/usr/share/i18n
   ```
 
+- RHEL 8
+  - install charmap for WINDOWS-31J
+  ```
+  yum install glibc-locale-source
+  ```
+
 - SJIS対応(RHEL, CentOS)
 
   ```
