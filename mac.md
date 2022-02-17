@@ -190,6 +190,20 @@ sudo port install <portname> ..... install
 sudo port selfupdate ............. port command自体のアップデート
      	  	     		   一回実行すれば後はoutdatedで管理する。
 
+## Java
+
+- OpenJDK
+
+  - install
+
+    ```
+    brew tap adoptopenjdk/openjdk
+    brew install --cask adoptopenjdk8
+    brew install --cask adoptopenjdk9
+    brew install --cask adoptopenjdk10
+    brew install --cask adoptopenjdk11
+    ```
+
 ######
 java
 ######
