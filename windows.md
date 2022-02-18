@@ -1,3 +1,10 @@
+### command tips
+
+```
+# list/find all file, /a-d: without directory, /b: only name, /s: recurcive
+dir /a-d /b /s
+```
+
 ### msys2
 
 - use symlink
