@@ -5,4 +5,5 @@
 - download
   - https://dev.mysql.com/downloads/mysql/
   - mysql-8.0.29-macos12-x86_64.dmg
-
+- directory
+  - /usr/local/mysql @ -> /usr/local/mysql-8.0.29-macos12-x86_64/
