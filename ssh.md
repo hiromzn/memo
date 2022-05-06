@@ -117,7 +117,7 @@ Host mydevelop
         User hmizuno
         HostName xx.xx.xx.xx
         Port 2233
-        IdentityFile /c/msys64/home/s-hiromichi.mizuno/.ssh/id_rsa.ap4
+        IdentityFile /c/msys64/home/hmizuno/.ssh/id_rsa.ap4
         ProxyJump ap4
 ```
 
