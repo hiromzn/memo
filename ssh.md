@@ -83,3 +83,41 @@ Host work_server
     ForwardAgent yes
     AddKeysToAgent yes
 ```
+
+## jump / proxy
+```
+# simple jump (local -> jump -> target)
+ssh -J rs44@jump hmizuno@target
+
+# double jump (local -> jump -> ap4 -> target)
+ssh -J rs44@jump,hmizuno@ap4 -i ~/.ssh/id_rsa.ap4 -p 2233 hmizuno@target
+```
+
+- sample of config
+```
+KexAlgorithms diffie-hellman-group-exchange-sha1,diffie-hellman-group1-sha1
+Ciphers +aes128-cbc,3des-cbc,aes256-cbc,aes192-cbc
+ServerAliveInterval 60
+ServerAliveCountMax 3
+ForwardAgent yes
+AddKeysToAgent yes
+
+Host jump jumpserver
+    Hostname xx.xx.xx.xx
+    User rs44
+    SendEnv LANG=C
+    ForwardAgent yes
+
+Host ap4
+        User hmizuno
+        HostName xx.xx.xx.xx
+        ProxyJump jump
+
+Host mydevelop
+        User hmizuno
+        HostName xx.xx.xx.xx
+        Port 2233
+        IdentityFile /c/msys64/home/s-hiromichi.mizuno/.ssh/id_rsa.ap4
+        ProxyJump ap4
+```
+
