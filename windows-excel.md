@@ -1,21 +1,24 @@
 # function
 
-- =IF(COUNTIF(�͈�,����),�^�̏ꍇ,�U�̏ꍇ)
+- =IF(COUNTIF(範囲,条件),真の場合,偽の場合)
   - ex
-    - =IF(COUNTIF(A1,"*Excel*"),"��","")
+    - =IF(COUNTIF(A1,"*Excel*"),"○","")
 
 
-- INDEX(�͈�,�c�ʒu[,���ʒu])
+- INDEX(範囲,縦位置[,横位置])
 
-  - �͈͂̏c�ʒu�Ŏ������J�����̒l���擾����֐��B
-  - �͈͂̏c�ʒu�Ɖ��ʒu�Ŏ������J�����̒l���擾����֐��B
+  - 範囲の縦位置で示されるカラムの値を取得する関数。
+  - 範囲の縦位置と横位置で示されるカラムの値を取得する関数。
   
-- MATCH(�����l,�͈�,FLAG)
+- MATCH(検索値,範囲,FLAG)
 
-  - �͈͂̃J�����Ɉ�v����A�������͋ߎ�����l�̃J�����̈ʒu�����߂�֐�
+  - 範囲のカラムに一致する、もしくは近似する値のカラムの位置を求める関数
   - FLAG
-    - 0 : ��v
-    - 1 or -1 : �ߎ��l
+    - 0 : 一致
+    - 1 or -1 : 近似値
+
+- =PHONETIC（文字列）
+  - 引数の（文字列）から、入力された文字をフリガナに変換する。
 
 - example
 
@@ -25,12 +28,12 @@
 
 # TIPS
 
-- �s�̍Ō�܂őI��
-  - Shift + Ctrl + �����i����j
+- 行の最後まで選択
+  - Shift + Ctrl + 下矢印（上矢印）
 
-- Excel:�w�b�_�[�t�b�^�[�̈��
-  - �u�y�[�W���C�A�E�g�v�u�y�[�W�ݒ�v�u����^�C�g���v�ň���^�C�g���s���w�肷��B
-�@
+- Excel:ヘッダーフッターの印刷
+  - 「ページレイアウト」「ページ設定」「印刷タイトル」で印刷タイトル行を指定する。
+　
 - Excel format
   - You can use the Open XML Format for excel Practically your Excel is a zip file containing few other XML files.
   - http://msdn.microsoft.com/en-us/library/aa338205%28office.12%29.aspx#office2007aboutnewfileformat_introduction
