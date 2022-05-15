@@ -1,3 +1,10 @@
+## short cut
+
+| key | description |
+|-----+-----|
+paste without format | Option + Cmd + Shift + V
+
+
 ## backup
 
 ### tmutil
