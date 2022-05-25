@@ -387,11 +387,18 @@ git log --oneline --decorate          # print ref name (branch pointer)
 git log --oneline --decorate --graph  # show graph view
 git log --date=format:'%Y-%m%d-%H%M:%S'
 git log --date=format:'%Y-%m%d-%H%M-%S' --pretty=format:'%h %ad%d %s'
-git log --date=format:'%Y-%m%d-%H%M-%S' --pretty=format:'%h %ad%d %<(30,
-trunc)%s' # truncate message of right
-git log --date=format:'%Y-%m%d-%H%M-%S' --pretty=format:'%h %ad%d %<(30,
-trunc)%s' # truncate message of middle part
+git log --date=format:'%Y-%m%d-%H%M-%S' --pretty=format:'%h %ad%d %<(30,trunc)%s' # truncate message of right
+git log --date=format:'%Y-%m%d-%H%M-%S' --pretty=format:'%h %ad%d %<(30,trunc)%s' # truncate message of middle part
 git log --date=format:'%Y-%m%d-%H%M-%S' --pretty=format:'%C(cyan)%h%Creset %C(black bold)%ad%Creset%C(auto)%d %s'
+
+git log -S<hoge>    # get commits with the "hoge" in the difference
+git log -G'foo|bar' # get commits with regexp in the difference
+git log -S"foo_function" --pickaxe-regex # without the following change pattern
+                                         #  from :  foo_function( aaa );
+					 #  to   :  foo_function( bbb );
+
+git log -L':hoge_func:foo.js'  # specifuc function
+git log -L10,15:foo.js         # specific line range
 
 # show file commit log
 git log <file_name>                   # commit log for <file_name>
