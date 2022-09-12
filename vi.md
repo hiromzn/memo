@@ -32,3 +32,57 @@ ctrl+w =            窓の仕切りを戻す
 :wqa                変更を全部ファイルに書き込んで修了
 :qa!                変更を全部破棄して修了
 ```
+
+# encode / fineformat
+
+- change encode
+
+  ```
+  :setl fenc=<code>
+  ```
+  - fenc : fileencoding
+
+- change return code
+
+  ```
+  :setl ff=<type>
+  ```
+  - ff : fileformat
+
+- re-open with <code>
+
+  ```
+  :e ++enc=<code>
+  ```
+
+- re-open with return code
+
+  ```
+  :e ++ff=<type>
+  ```
+
+# sample of .vimrc of windows
+
+```
+syntax off
+if &t_Co > 1
+	syntax enable
+endif
+set t_Co=256
+set ts=4
+
+" set background=dark
+" colorscheme molokai
+" colorscheme moria
+set hlsearch
+
+set list
+set listchars=tab:>-
+
+set ic
+set smartcase
+
+set encoding=utf-8
+set fileencodings=utf-8,cp932,eucjp,latin
+set fileformats=unix,dos,mac
+```
