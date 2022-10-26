@@ -818,6 +818,7 @@ git diff e6e4dcd bin/
 git diff --name-only      # show only names of changed files.
 
 git diff --diff-filter=M  # Select only files that are Modified(M) / Added(A),Copied(C),Deleted(D),Renamed(R) etc.
+git diff --diff-filter=A --name-only
 
 git diff			# diff working_tree <-> staged
 git diff --cached	# diff                  staged <-> last_commit(HEAD)
