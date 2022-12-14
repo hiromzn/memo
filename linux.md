@@ -133,6 +133,12 @@ gcc (GCC) 4.8.5 20150623 (Red Hat 4.8.5-36)
 
 # command
 
+### find
+
+```
+find ./ -newermt '2022/12/13 15:40:00' -and ! -newermt '2022/12/13 15:50:00'
+```
+
 ### sudo
 
 ```
