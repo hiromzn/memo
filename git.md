@@ -391,6 +391,8 @@ git log --date=format:'%Y-%m%d-%H%M-%S' --pretty=format:'%h %ad%d %<(30,trunc)%s
 git log --date=format:'%Y-%m%d-%H%M-%S' --pretty=format:'%h %ad%d %<(30,trunc)%s' # truncate message of middle part
 git log --date=format:'%Y-%m%d-%H%M-%S' --pretty=format:'%C(cyan)%h%Creset %C(black bold)%ad%Creset%C(auto)%d %s'
 
+git log --date=iso --pretty=format:"%ad|%h|%an|%s"
+
 git log -S<hoge>    # get commits with the "hoge" in the difference
 git log -G'foo|bar' # get commits with regexp in the difference
 git log -S"foo_function" --pickaxe-regex # without the following change pattern
