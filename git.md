@@ -406,6 +406,7 @@ git log -L10,15:foo.js         # specific line range
 git log <file_name>                   # commit log for <file_name>
 git log -p <file_name>                #   with diff info.
 git log -p --oneline -U0 <file_name>
+git log --all --first-parent --remotes --reflog -- <file_name>
 
 # show file contents
 git show <commitID>:<file_path>
