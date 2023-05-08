@@ -46,6 +46,14 @@ p/<type> <exp>
 sample:
   p mydata
   p/x buffer
+
+# print as a structure
+pt <exp>
+
+# Display structure members line by line
+set print pretty on
+# Display structure members in one line
+set print pretty off
 ```
 
 - dump memory
