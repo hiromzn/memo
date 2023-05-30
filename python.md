@@ -17,6 +17,11 @@
 
 - Windowsの場合
 
+```
+# msys
+$ pacman -S python
+```
+
   Windowsの場合、http://www.python.org/ から [Downloads] → [Windows] を選び、アーキテクチャに応じたインストーラ (例: python-2.7.9.amd64.msi) をダウンロードしてインストールしてください。
 
 - Linux(Red Hat / CentOS)
@@ -63,6 +68,8 @@
 
 - windows
 ```
+# msys
+$ pacman -S python3-pip
 ```
 
 - INSTALL of Linux
