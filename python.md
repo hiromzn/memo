@@ -30,17 +30,26 @@ $ pacman -S python
   sudo yum -y install python
   ```
 
-  - CentOS 7.0 / Python 3.6
+- CentOS 7.0 / Python 3.6 / 3.8
 
-    ```
-    # yum install rh-python36.x86_64
-    $ vi ~/.bashrc
-    . /opt/rh/rh-python36/enable
-    
+  ```
+  $ sudo yum install rh-python38
+  $ sudo yum install rh-python38-python-pip
+  $ sudo yum install rh-python38-python-pysocks
+
+  $ sudo scl enable rh-python38 bash
+  # env |grep proxy
+  https_proxy=socks5h://localhost:3127
+  # pip install pandas
+  ```
+
+  ```
+  $ sudo yum install rh-python36.x86_64
+  $ vi ~/.bashrc
+  . /opt/rh/rh-python36/enable
     or
-
-    $ .  /opt/rh/rh-python36/enable
-    ```
+  $ .  /opt/rh/rh-python36/enable
+  ```
 
 - Linux(Ubuntu / Debian)の場合
   ```
