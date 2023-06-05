@@ -200,10 +200,10 @@ optional arguments:
 #### list : tuple(変更不可) : dictionary : enum
 
 ```
-list:リスト	foo = ['tom', 'mike', 'nancy', 'jenny', 'jack']
-tuple:タプル	foo = ('tom', 'mike', 'nancy', 'jenny', 'jack')
-dic:辞書	foo = {'tom': 20, 'mike': 21, 'nancy': 'unknown', 'jenny': 12 'jack': 55}
-enum:集合	foo = set('tom', 'mike', 'nancy', 'jenny', 'jack')
+list:	リスト	: foo = ['tom', 'mike', 'nancy', 'jenny', 'jack']
+tuple:	タプル	: foo = ('tom', 'mike', 'nancy', 'jenny', 'jack')
+dic:	辞書	: foo = {'tom': 20, 'mike': 21, 'nancy': 'unknown', 'jenny': 12 'jack': 55}
+enum:	集合	: foo = set('tom', 'mike', 'nancy', 'jenny', 'jack')
 ```
 
 ##### list
@@ -216,17 +216,17 @@ list2 = list1 + [ 'd' ]
 
 ##### リスト操作関数: function for list
 ```
-append( val )	リストの末尾に1つの要素を追加
-extend( arr )	リストの末尾に配列（複数要素）を追加
-insert( index, val )	リストの指定したインデックスに要素を追加
-del( index )   インデックスで指定したリストの要素を削除
-remove( val )  リストから指定した値をもつ要素を削除
-pop()	要素のポップ
-index( val )	リストから指定した値をもつ要素のインデックスを取得
-count( val )	リスト内で指定した値をもつ要素の数を取得
-join( arr )	リストの文字列への変換（split関数の逆）
+append( val )		リストの末尾に1つの要素を追加
+extend( arr )		リストの末尾に配列（複数要素）を追加
+insert( index, val ) リストの指定したインデックスに要素を追加
+del( index )   		インデックスで指定したリストの要素を削除
+remove( val )  		リストから指定した値をもつ要素を削除
+pop()				要素のポップ
+index( val )		リストから指定した値をもつ要素のインデックスを取得
+count( val )		リスト内で指定した値をもつ要素の数を取得
+join( arr )			リストの文字列への変換（split関数の逆）
 sort( reverse= True/False )	リストをソートする（数値なら昇順,文字列ならアルファベット順）
-len( arr )     リスト内要素数を取得
+len( arr )			リスト内要素数を取得
 ```
 
 ```
