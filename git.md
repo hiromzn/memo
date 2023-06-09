@@ -430,6 +430,7 @@ git branch -r
 git branch --contains HEAD  # show current branch (branch name of HEAD)
 git branch --contains       # show current branch (default is HEAD)
 git branch -a
+git rev-parse --abbrev-ref HEAD # show current branch
 ```
 
 ## pull
