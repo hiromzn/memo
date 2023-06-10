@@ -1,5 +1,8 @@
 
 # urls
+- pandas
+  - tutorial
+    - https://tutorials.chainer.org/ja/11_Introduction_to_Pandas.html
 - https://ai-inter1.com/python-pandas/
 - https://ai-inter1.com/pandas-dataframe_basic/
 
