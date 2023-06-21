@@ -2,7 +2,6 @@
 
 - $ gdb executable
 
-<<<<<<< HEAD
 ## basic
 ```
 # bp
@@ -24,9 +23,6 @@ x/<n> <exp>			... print hex dump <exp>
 ```
 
 ## INFO
-=======
-## get INFO
->>>>>>> 1c1028fdddc72f631f5f074e2e25e6f5e6a0a82e
 ```
 bt ................ print stack tarce
 list funcname ..... 関数の内容の表示

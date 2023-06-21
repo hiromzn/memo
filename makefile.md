@@ -114,7 +114,6 @@ objs : $(OBJS)
 .c.o :
         $(CC) $(COPT) -c $<
 ```
-<<<<<<< HEAD
 
 ```
 # check using touch file
@@ -127,5 +126,3 @@ convert_files :
 	./convert_files.sh $(TARGET_DIR)
 	touch $(CONVERT_FILES)
 ```
-=======
->>>>>>> 8979c50fc06d3fbd7c5f9e1e0a3977a747df3bfc
