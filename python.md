@@ -17,6 +17,11 @@
 
 - Windowsの場合
 
+```
+# msys
+$ pacman -S python
+```
+
   Windowsの場合、http://www.python.org/ から [Downloads] → [Windows] を選び、アーキテクチャに応じたインストーラ (例: python-2.7.9.amd64.msi) をダウンロードしてインストールしてください。
 
 - Linux(Red Hat / CentOS)
@@ -25,17 +30,26 @@
   sudo yum -y install python
   ```
 
-  - CentOS 7.0 / Python 3.6
+- CentOS 7.0 / Python 3.6 / 3.8
 
-    ```
-    # yum install rh-python36.x86_64
-    $ vi ~/.bashrc
-    . /opt/rh/rh-python36/enable
-    
+  ```
+  $ sudo yum install rh-python38
+  $ sudo yum install rh-python38-python-pip
+  $ sudo yum install rh-python38-python-pysocks
+
+  $ sudo scl enable rh-python38 bash
+  # env |grep proxy
+  https_proxy=socks5h://localhost:3127
+  # pip install pandas
+  ```
+
+  ```
+  $ sudo yum install rh-python36.x86_64
+  $ vi ~/.bashrc
+  . /opt/rh/rh-python36/enable
     or
-
-    $ .  /opt/rh/rh-python36/enable
-    ```
+  $ .  /opt/rh/rh-python36/enable
+  ```
 
 - Linux(Ubuntu / Debian)の場合
   ```
@@ -63,6 +77,8 @@
 
 - windows
 ```
+# msys
+$ pacman -S python3-pip
 ```
 
 - INSTALL of Linux
@@ -184,10 +200,10 @@ optional arguments:
 #### list : tuple(変更不可) : dictionary : enum
 
 ```
-list:リスト	foo = ['tom', 'mike', 'nancy', 'jenny', 'jack']
-tuple:タプル	foo = ('tom', 'mike', 'nancy', 'jenny', 'jack')
-dic:辞書	foo = {'tom': 20, 'mike': 21, 'nancy': 'unknown', 'jenny': 12 'jack': 55}
-enum:集合	foo = set('tom', 'mike', 'nancy', 'jenny', 'jack')
+list:	リスト	: foo = ['tom', 'mike', 'nancy', 'jenny', 'jack']
+tuple:	タプル	: foo = ('tom', 'mike', 'nancy', 'jenny', 'jack')
+dic:	辞書	: foo = {'tom': 20, 'mike': 21, 'nancy': 'unknown', 'jenny': 12 'jack': 55}
+enum:	集合	: foo = set('tom', 'mike', 'nancy', 'jenny', 'jack')
 ```
 
 ##### list
@@ -200,17 +216,17 @@ list2 = list1 + [ 'd' ]
 
 ##### リスト操作関数: function for list
 ```
-append( val )	リストの末尾に1つの要素を追加
-extend( arr )	リストの末尾に配列（複数要素）を追加
-insert( index, val )	リストの指定したインデックスに要素を追加
-del( index )   インデックスで指定したリストの要素を削除
-remove( val )  リストから指定した値をもつ要素を削除
-pop()	要素のポップ
-index( val )	リストから指定した値をもつ要素のインデックスを取得
-count( val )	リスト内で指定した値をもつ要素の数を取得
-join( arr )	リストの文字列への変換（split関数の逆）
+append( val )		リストの末尾に1つの要素を追加
+extend( arr )		リストの末尾に配列（複数要素）を追加
+insert( index, val ) リストの指定したインデックスに要素を追加
+del( index )   		インデックスで指定したリストの要素を削除
+remove( val )  		リストから指定した値をもつ要素を削除
+pop()				要素のポップ
+index( val )		リストから指定した値をもつ要素のインデックスを取得
+count( val )		リスト内で指定した値をもつ要素の数を取得
+join( arr )			リストの文字列への変換（split関数の逆）
 sort( reverse= True/False )	リストをソートする（数値なら昇順,文字列ならアルファベット順）
-len( arr )     リスト内要素数を取得
+len( arr )			リスト内要素数を取得
 ```
 
 ```
