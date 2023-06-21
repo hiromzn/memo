@@ -80,14 +80,13 @@ i .... assemble
 
 ## BREAKPOINTS
 ```
-b main ............ 関数にBPを設定
-b line_number ..... 現在の関数の指定行にBPを設定
-i b ............... break pointerの表示
-d <n> ............. <n>番目のbpを削除
-dis <n> ........... <n>番目のbpをdisable
-ena <n> ........... <n>番目のbpをenable
-commands .......... 最後に設定したBreakPointにコマ
-                    ンドを登録
+b main ............ set bp at function
+b line_number ..... set bp at line number in current source
+i b ............... print break pointer information
+d <n> ............. delete <n> bp
+dis <n> ........... disable <n> bp
+ena <n> ........... enable <n> bp
+commands .......... add command into last BreakPoint
 	(gdb) commands
 	Type commands for when breakpoint 9 is hit, one per line.
 	End with a line saying just "end".
