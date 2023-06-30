@@ -73,6 +73,12 @@ s .... string which terminated by null
 i .... assemble
 ```
 
+## shared lib
+- set shared lib search path
+```
+(gdb) set solib-search-path /home/testuser/libtest
+```
+
 ## THREAD
 
 - info threads ...... threadの一覧表示
@@ -151,7 +157,7 @@ Num Enb Expression
 #### memory leak tools of HP GDB
 ```
   from:
-    http://h21007.www2.hp.com/dspp/tech/tech_TechDocumentDetailPage_IDX/1,1701,2078,00.html
+    HP : dspp/tech/tech_TechDocumentDetailPage_IDX/1,1701,2078,00.html
 
   HP WDB supports batch mode memory leak
   detection, also called batch Run Time Checking
