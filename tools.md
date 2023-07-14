@@ -1,5 +1,12 @@
 # language tools
 
+- AFL
+  - https://github.com/google/AFL
+  - american fuzzy lop
+  - Fuzzing is one of the most powerful and proven strategies for identifying security issues in real-world software; it is responsible for the vast majority of remote code execution and privilege escalation bugs found to date in security-critical software.
+  - ref
+    - https://www.ipa.go.jp/security/vuln/fuzzing/ug65p9000001986g-att/000081408.pdf
+
 - Compiler Explorer
 
   - interactive compiler (source code -> assembly code)
