@@ -850,6 +850,8 @@ start services...
 
   ```
   yum list installed
+  # rpm -ql <package_name>
+  
   yum list available
   yum list all
   yum list kernel
