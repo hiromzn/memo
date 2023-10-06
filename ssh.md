@@ -121,3 +121,54 @@ Host mydevelop
         ProxyJump ap4
 ```
 
+## remote forward
+### How to use
+- local PC
+  - setup .ssh/config of local PC
+  - execute ssh on local PC
+    ```
+    $ ssh mydevserver
+    ```
+- remote : develop server
+  - setup proxy config
+    - for yum
+      - /etc/yum.conf : add entry "proxy=socks5h://localhost:3127"
+    - for npm (nodejs)
+      - execute "npm -g config set proxy socks5h://localhost:3127"
+  - you can use yum and npm with proxy (port forwarding).
+
+### .ssh/config of local PC
+```
+Ciphers +aes128-cbc,3des-cbc,aes256-cbc,aes192-cbc
+ServerAliveInterval 60
+ServerAliveCountMax 10
+ForwardAgent yes
+AddKeysToAgent yes
+
+Host jump
+    Hostname jumpserver1
+    User user_of_jump
+    HostkeyAlgorithms +ssh-rsa,ssh-dss
+    KexAlgorithms diffie-hellman-group-exchange-sha1,diffie-hellman-group1-sha1
+
+Host jump2
+    User hmizuno
+    HostName jumpserver2
+    ProxyJump jump
+
+Host mydevserver
+    User hmizuno
+    HostName mydevcontainer
+    Port 2233
+    ProxyJump jump2
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+    CheckHostIP yes
+    ForwardX11 yes
+    ForwardX11Trusted yes
+    Compression yes
+    GatewayPorts yes
+    RemoteForward 6001
+    RemoteForward 3127
+```
+
