@@ -10,6 +10,8 @@ npm config set proxy http://host:8080
 npm config set https-proxy http://host:8080
 
 # npm config set registry http://host:8080
+
+# npm -g config set proxy socks5h://localhost:3127
 ```
 
 # install
