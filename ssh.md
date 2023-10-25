@@ -1,3 +1,27 @@
+### ssh-agent
+
+```
+#-------------------------------------
+# start ssh agent
+$ eval "$(ssh-agent -s)"
+
+#   this command sets below environment variables.
+#		SSH_AGENT_PID=26998
+#	above environment variables is used by "ssh-agent -k" command.
+
+#-------------------------------------
+# add ssh private key to ssh agent
+$ ssh-add ~/.ssh/id_rsa
+
+#-------------------------------------
+# list ssh key which ssh agent has
+$ ssh-add -l
+
+#-------------------------------------
+# kill ssh agent
+$ ssh-agent -k
+```
+
 ### basic operation
 
 - prepare
