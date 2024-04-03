@@ -1,11 +1,36 @@
-### command tips
+table of contents
+- [command tips](#command-tips)
+- [msys2](#msys2)
+- [shortcuts](#shortcuts)
+	- [window](#window)
+	- [work space / desctop / screen switch](#work-space--desctop--screen-switch)
+- [administrator](#administrator)
+- [task scheduler](#task-scheduler)
+- [MSYS2](#msys2-1)
+- [robocopy](#robocopy)
+- [how to force foramt](#how-to-force-foramt)
+- [Memory dump](#memory-dump)
+- [Bluetooth マウス　セットアップ](#bluetooth-マウスセットアップ)
+- [スタートアップフォルダ](#スタートアップフォルダ)
+- [index](#index)
+- [chcp](#chcp)
+- [network: netsh : proxy](#network-netsh--proxy)
+- [hosts files:](#hosts-files)
+- [日付：時刻の表示フォーマットの変更](#日付時刻の表示フォーマットの変更)
+- [Windows7: StartUPの設定](#windows7-startupの設定)
+- [network](#network)
+- [default webブラウザの変更](#default-webブラウザの変更)
+
+re-create : VSC : do Shift+Ctrl+p : Markdown All in One: Create Table of Contents
+
+# command tips
 
 ```
 # list/find all file, /a-d: without directory, /b: only name, /s: recurcive
 dir /a-d /b /s
 ```
 
-### msys2
+# msys2
 
 - use symlink
 
@@ -13,12 +38,18 @@ dir /a-d /b /s
 # vi .bashrc
 export MSYS=winsymlinks:lnk
 ```
-### URL
+# shortcuts
 
-- shortcuts
+URL
   - https://pc-karuma.net/windows-10-keyboard-shortcuts-list/
 
-#### work space / desctop / screen switch
+## window
+
+| key binding	| function |
+|---------------|----------------------------------|
+| Alt + RET  	| exit full screen mode	|
+
+## work space / desctop / screen switch
 
 | key binding     | function |
 |-----------------|----------------------------------|
@@ -30,7 +61,7 @@ export MSYS=winsymlinks:lnk
 | Win + Ctrl + -> | change current desctop |
 | Win + Ctrl + <- | change current desctop |
 
-### administrator
+# administrator
 
 ```
 # run as administrator
@@ -40,15 +71,20 @@ $ runas /user:administrator command...
 $ cacls file_name
 ```
 
-### Disk Management
-
-### task scheduler
+# task scheduler
 　コントロールパネル
 　　システムとセキュリティ
 　　　管理ツール
 	タスクスケジューラ
 
-### MSYS2
+# MSYS2
+
+- use symlink
+
+```
+# vi .bashrc
+export MSYS=winsymlinks:lnk
+```
 
 - sourceforge.net/projects/msys2/
 
@@ -65,7 +101,7 @@ $ cacls file_name
 	- pacman -S tig
 	- pacman -S tmux
 
-### robocopy
+# robocopy
 
 ```
   ---------------------------------------------------------------------------
@@ -82,7 +118,7 @@ http://amaotolog.com/backup/entry188.html
 毎日12時にrobocopyでパソコンを自動的にバックアップする方法
 ```
 
-### how to force foramt
+# how to force foramt
 ```
 	start admin console ( RightClick[Windows] -> Admin Console)
 
@@ -113,11 +149,11 @@ http://amaotolog.com/backup/entry188.html
 			->
 ```
 
-### Memory dump
+# Memory dump
  - "%SystemRoot%\MEMORY.DMP" 又は "%SystemRoot%\Minidump"
  - "Windows" フォルダの直下
 
-### Bluetooth マウス　セットアップ
+# Bluetooth マウス　セットアップ
 
 ```
 　切れる場合の設定
@@ -132,7 +168,7 @@ http://amaotolog.com/backup/entry188.html
 　　　「Bluetooth ネットワーク接続」を選択して、「このネットワーク デバイスを無効にする」をクリック
 ```
 
-### スタートアップフォルダ
+# スタートアップフォルダ
 ```
 　スタートアップフォルダにプログラムへのショートカットを保存すれば、
 　ユーザログオン時に自動的にプログラムが実行されます。スタートアップフォルダは以下の2種類があります。
@@ -151,7 +187,7 @@ http://amaotolog.com/backup/entry188.html
 　　(英語表示の場合：C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup)
 ```
 
-### index
+# index
 ```
 	コントロールパネル　→　インデックスのオプション
 		→　変更
@@ -159,7 +195,7 @@ http://amaotolog.com/backup/entry188.html
 	OutLook　→　検索（タグ）　→　検索ツール　→　インデックスの状況
 ```
 
-### chcp
+# chcp
 ```
 	$ chcp
 	$ chcp 932
@@ -179,7 +215,7 @@ http://amaotolog.com/backup/entry188.html
 	65001    utf-8         Unicode (UTF-8)
 ```
 
-### network: netsh : proxy
+# network: netsh : proxy
 
 ```
 	>netsh
@@ -193,7 +229,7 @@ http://amaotolog.com/backup/entry188.html
 	netsh winhttp>import proxy ie
 ```
 
-### hosts files:
+# hosts files:
 ```
 	c:\windows\system32\drivers\etc\hosts
 
@@ -204,7 +240,7 @@ http://amaotolog.com/backup/entry188.html
 	　メモ帳アイコンを右クリックー＞管理者として実行して編集
 ```
 
-### 日付：時刻の表示フォーマットの変更
+# 日付：時刻の表示フォーマットの変更
 
 - Windows7
 
@@ -213,7 +249,7 @@ http://amaotolog.com/backup/entry188.html
 　　  - 地域と言語
 　　　　- 日付、時刻または数値の形式の変更
 
-### Windows7: StartUPの設定
+# Windows7: StartUPの設定
 ```
 　Cドライブ
 　└Users
@@ -227,7 +263,7 @@ http://amaotolog.com/backup/entry188.html
 　　　　　　　　　└Startup
 ```
 
-### network
+# network
 - c:/WINDOWS/system32/drivers/etc/hosts
 
 - netstat
@@ -242,7 +278,7 @@ http://amaotolog.com/backup/entry188.html
   TCP    0.0.0.0:1098           0.0.0.0:0              LISTENING       3656
   ```
 
-### default webブラウザの変更
+# default webブラウザの変更
 ```
   コントロールパネル
   --> 「プログラムの追加と削除」
