@@ -587,6 +587,10 @@ my $hash_ref = \%hash; # reference of hash
 
 my $velue = $hash{ $key };
 my $value = $hash_ref->{ $key };
+
+if (exists($hash2{'1'})){
+  print "registered\n";
+}
 ```
 
 #### hash of array
