@@ -1,13 +1,46 @@
+INDEX:
+- [language tools](#language-tools)
+    - [Sourcegraph](#sourcegraph)
+    - [AFL](#afl)
+    - [Compiler Explorer](#compiler-explorer)
+    - [tool list for linux](#tool-list-for-linux)
+    - [cloc](#cloc)
+    - [libevent (http://monkey.org/~provos/libevent/)](#libevent-httpmonkeyorgprovoslibevent)
+    - [cscope](#cscope)
+    - [gnu global](#gnu-global)
+- [dev env](#dev-env)
+    - [tmux](#tmux)
+    - [sql migrate](#sql-migrate)
+- [debug / performance](#debug--performance)
+    - [valgrind](#valgrind)
+    - [benchmark tool](#benchmark-tool)
+- [other tools](#other-tools)
+    - [PDF tool](#pdf-tool)
+    - [find command](#find-command)
+    - [ieHTTPHeaders](#iehttpheaders)
+
 # language tools
 
-- AFL
+### Sourcegraph
+
+- https://sourcegraph.com/
+
+- cody
+  - https://sourcegraph.com/cody
+  - Cody is a coding AI assistant that uses AI and a deep understanding of your codebase to help you write and understand code faster.
+
+- code search
+  - https://sourcegraph.com/code-search
+  - Code Search makes it easy to find code, make large-scale changes, and track insights across codebases of any scale and with any number of code hosts.
+
+### AFL
   - https://github.com/google/AFL
   - american fuzzy lop
   - Fuzzing is one of the most powerful and proven strategies for identifying security issues in real-world software; it is responsible for the vast majority of remote code execution and privilege escalation bugs found to date in security-critical software.
   - ref
     - https://www.ipa.go.jp/security/vuln/fuzzing/ug65p9000001986g-att/000081408.pdf
 
-- Compiler Explorer
+### Compiler Explorer
 
   - interactive compiler (source code -> assembly code)
   - https://godbolt.org/
@@ -89,6 +122,24 @@ SUM:                           513          20923          44353         130038
 # 13452,C/C++ Header,COMMON/INC/124.h
 # 4761,C/C++ Header,COMMON/INC/aa.h
 ```
+
+### libevent (http://monkey.org/~provos/libevent/)
+- The libevent API provides a mechanism to execute a callback function
+	when a specific event occurs on a file descriptor or after a timeout
+	has been reached. Furthermore, libevent also support callbacks
+	due to signals or regular timeouts.
+
+### cscope
+
+- https://github.com/tsuyopon/memo/blob/master/DEVTOOLS/Cscope.md
+- tag jump tool for C / C++ / Java / PHP4
+- has plugin for vim
+
+### gnu global
+- https://www.gnu.org/software/global/
+
+# dev env
+
 ### tmux
 
 - terminal multiplexer
@@ -129,29 +180,30 @@ SUM:                           513          20923          44353         130038
   prefix + y	コピー終了位置決定(viモード)
   prefix + Crtl + p	コピー内容の貼り付け
   ```
-
-### cscope
-
-- https://github.com/tsuyopon/memo/blob/master/DEVTOOLS/Cscope.md
-- tag jump tool for C / C++ / Java / PHP4
-- has plugin for vim
-
-### gnu global
-- https://www.gnu.org/software/global/
-
-- basic operation
-  
+ 
 ### sql migrate
 - https://github.com/rubenv/sql-migrate
 	- Atomic migrations
 	- Supports SQLite, PostgreSQL, MySQL, MSSQL and Oracle databases
 
-### PDF tool
-- CutePDF
-- クセロPDF
+# debug / performance
+
+### valgrind
+- https://valgrind.org/
+- linux memory leak check tool
+- Valgrind is an instrumentation framework for building dynamic analysis tools.
+```
+valgrind --tool=memcheck --leak-check=full --log-file=/tmp/valgrind.log hoge.exe
+```
 
 ### benchmark tool
 - hdbench clone
+
+# other tools
+
+### PDF tool
+- CutePDF
+- クセロPDF
 
 ### find command
 - ```
@@ -162,17 +214,3 @@ SUM:                           513          20923          44353         130038
 	```
 ### ieHTTPHeaders
 - IEに組み込んで、接続先サーバーのホスト名、Referer、Cookieの内容などを確認可能
-
-### valgrind
-- https://valgrind.org/
-- linux memory leak check tool
-- Valgrind is an instrumentation framework for building dynamic analysis tools.
-```
-valgrind --tool=memcheck --leak-check=full --log-file=/tmp/valgrind.log hoge.exe
-```
-
-### libevent (http://monkey.org/~provos/libevent/)
-- The libevent API provides a mechanism to execute a callback function
-	when a specific event occurs on a file descriptor or after a timeout
-	has been reached. Furthermore, libevent also support callbacks
-	due to signals or regular timeouts.
