@@ -1,6 +1,8 @@
 # document
 
 - https://git-scm.com/book/ja/v2
+- https://keijinsonyaban.blogspot.com/2010/10/a-successful-git-branching-model.html
+  - translate "A successful Git branching model"
 
 ### alias
 ```
