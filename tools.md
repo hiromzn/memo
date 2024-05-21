@@ -188,6 +188,10 @@ SUM:                           513          20923          44353         130038
 
 # debug / performance
 
+### rr-debugger
+- https://github.com/rr-debugger/rr
+- rr is a lightweight tool for recording, replaying and debugging execution of applications (trees of processes and threads). Debugging extends gdb with very efficient reverse-execution, which in combination with standard gdb/x86 features like hardware data watchpoints, makes debugging much more fun.
+
 ### valgrind
 - https://valgrind.org/
 - linux memory leak check tool
