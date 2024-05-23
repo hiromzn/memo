@@ -1441,6 +1441,7 @@ $ git config --global https.proxy http://proxy.jpn.hp.com:8080
     git tag -l
     git tag
     git tag -n[<n>]  ..... print tag message with <n> lines
+    git ls-remote --tags   # print remote tag
     ```
 
   - add（追加）
