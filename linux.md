@@ -133,6 +133,15 @@ gcc (GCC) 4.8.5 20150623 (Red Hat 4.8.5-36)
 
 # command
 
+### user / group
+
+```
+# add group to user
+$ sudo usermod -aG new_group hmizuno
+
+# set group_list to user
+$ sudo usermod -G group1,group2,group3 user_name
+```
 ### find
 
 ```
